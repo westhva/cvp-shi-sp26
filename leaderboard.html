@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHI × Canva Spring 2026 — Leaderboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+            color: white;
+            padding: 36px 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.2em; margin-bottom: 8px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        .header p { font-size: 1.1em; opacity: 0.92; }
+        .last-updated {
+            font-size: 0.85em;
+            opacity: 0.75;
+            margin-top: 8px;
+        }
+
+        /* Prize banner */
+        .prize-banner {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 24px 30px;
+            margin: 24px;
+            border-radius: 14px;
+            box-shadow: 0 8px 25px rgba(245,87,108,0.3);
+        }
+        .prize-banner h2 { font-size: 1.3em; margin-bottom: 14px; text-align: center; }
+        .prize-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+        .prize-item {
+            background: rgba(255,255,255,0.18);
+            border-radius: 10px;
+            padding: 12px 16px;
+            text-align: center;
+        }
+        .prize-item .prize-emoji { font-size: 1.8em; margin-bottom: 4px; }
+        .prize-item .prize-label { font-size: 0.82em; opacity: 0.9; margin-bottom: 4px; }
+        .prize-item .prize-value { font-size: 1.1em; font-weight: 700; }
+
+        /* Scoring key */
+        .scoring-key {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 16px 24px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+            align-items: center;
+            justify-content: center;
+        }
+        .score-pill {
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.82em;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .s-deal   { background: #fff0f0; color: #c0392b; border: 1px solid #ffcdd2; }
+        .s-mtg    { background: #fff8e1; color: #e65100; border: 1px solid #ffe082; }
+        .s-reg    { background: #f3e5f5; color: #6a1b9a; border: 1px solid #ce93d8; }
+        .s-call   { background: #e3f2fd; color: #1565c0; border: 1px solid #90caf9; }
+        .s-email  { background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
+
+        /* Category leaders */
+        .section { padding: 24px 30px; }
+        .section-title {
+            font-size: 1.25em;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .category-leaders {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+            margin-bottom: 8px;
+        }
+        .leader-card {
+            border-radius: 14px;
+            padding: 18px;
+            text-align: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+            border: 1px solid transparent;
+        }
+        .leader-card .cat-emoji { font-size: 2em; margin-bottom: 6px; }
+        .leader-card .cat-label { font-size: 0.78em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; opacity: 0.7; }
+        .leader-card .cat-name  { font-size: 1.1em; font-weight: 700; margin-bottom: 4px; }
+        .leader-card .cat-value { font-size: 0.9em; font-weight: 600; }
+        .leader-card .cat-prize { font-size: 0.78em; margin-top: 6px; padding: 3px 8px; border-radius: 10px; background: rgba(0,0,0,0.07); display: inline-block; }
+
+        .lc-deals   { background: #fff5f5; border-color: #ffcdd2; }
+        .lc-deals .cat-value { color: #c0392b; }
+        .lc-mtgs    { background: #fffde7; border-color: #ffe082; }
+        .lc-mtgs .cat-value { color: #e65100; }
+        .lc-calls   { background: #e3f2fd; border-color: #90caf9; }
+        .lc-calls .cat-value { color: #1565c0; }
+        .lc-emails  { background: #e8f5e9; border-color: #a5d6a7; }
+        .lc-emails .cat-value { color: #2e7d32; }
+
+        /* Tables */
+        .table-wrap { overflow-x: auto; margin-top: 8px; }
+        table { width: 100%; border-collapse: collapse; }
+        thead tr { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        thead.district-head tr { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: #1a3a2a; }
+        th { padding: 12px 14px; text-align: left; font-size: 0.82em; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+        td { padding: 12px 14px; border-bottom: 1px solid #f0f0f0; font-size: 0.94em; }
+        tbody tr:hover { background: #fafafa; }
+        tbody tr:last-child td { border-bottom: none; }
+
+        .rank-cell { font-weight: 700; color: #666; width: 36px; }
+        .rank-1 { color: #f39c12; font-size: 1.3em; }
+        .rank-2 { color: #95a5a6; font-size: 1.2em; }
+        .rank-3 { color: #cd6133; font-size: 1.15em; }
+
+        .rep-name { font-weight: 600; }
+        .points-cell { font-weight: 700; font-size: 1.05em; color: #764ba2; }
+        .district-tag {
+            display: inline-block; padding: 2px 8px;
+            border-radius: 10px; font-size: 0.76em; font-weight: 600;
+        }
+        .district-east    { background: #d0ebff; color: #1971c2; }
+        .district-central { background: #d3f9d8; color: #2f9e44; }
+        .district-west    { background: #ffe8cc; color: #e67700; }
+
+        .stat-num { text-align: right; color: #555; }
+        .highlight-col { background: #faf5ff; }
+
+        /* district table */
+        .dist-rank { font-weight: 700; font-size: 1.1em; }
+        .avg-pts { font-weight: 700; color: #11998e; }
+        .winner-row td { background: linear-gradient(90deg, #f0fff4, #ffffff); }
+        .winner-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 10px;
+            background: #d4edda; color: #155724; font-size: 0.78em; font-weight: 700; margin-left: 6px;
+        }
+
+        .divider { height: 1px; background: #e9ecef; margin: 0 30px; }
+
+        /* Setup box */
+        .setup-box {
+            margin: 24px 30px;
+            border: 2px dashed #0072ff;
+            border-radius: 14px;
+            padding: 28px 30px;
+            background: #f0f7ff;
+        }
+        .setup-box h3 { color: #0072ff; margin-bottom: 12px; font-size: 1.1em; }
+        .setup-box ol { padding-left: 20px; color: #333; line-height: 2; }
+        .setup-box code {
+            background: #dbeeff; padding: 3px 8px;
+            border-radius: 5px; font-size: 0.88em;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* loading / error */
+        .status-msg {
+            text-align: center; padding: 50px 20px;
+            color: #999; font-size: 1.1em;
+        }
+        .error-msg { color: #e74c3c; }
+
+        .back-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            margin: 20px 30px 0;
+            padding: 10px 20px;
+            background: #f8f9fa; border: 2px solid #dee2e6;
+            border-radius: 10px; color: #555;
+            font-size: 0.9em; font-weight: 600;
+            text-decoration: none; cursor: pointer;
+            transition: all 0.2s;
+        }
+        .back-btn:hover { background: #e9ecef; color: #333; }
+
+        .footer {
+            background: #2d3436; color: white;
+            padding: 18px; text-align: center; font-size: 0.85em;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.6em; }
+            .section { padding: 18px 16px; }
+            th, td { padding: 10px 10px; font-size: 0.85em; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="header">
+        <h1>🏆 SHI × Canva Spring 2026</h1>
+        <p>Sales Blitz Leaderboard</p>
+        <p class="last-updated" id="lastUpdated">Loading data…</p>
+    </div>
+
+    <a class="back-btn" href="index.html">← Back to Dashboard</a>
+
+    <!-- Prize Structure -->
+    <div class="prize-banner">
+        <h2>🎁 Prize Structure</h2>
+        <div class="prize-grid">
+            <div class="prize-item">
+                <div class="prize-emoji">🥇</div>
+                <div class="prize-label">Overall Leader</div>
+                <div class="prize-value">$75 Gift Card</div>
+            </div>
+            <div class="prize-item">
+                <div class="prize-emoji">📅</div>
+                <div class="prize-label">Per Meeting Booked</div>
+                <div class="prize-value">$25 Gift Card</div>
+            </div>
+            <div class="prize-item">
+                <div class="prize-emoji">📞</div>
+                <div class="prize-label">Most Calls Made</div>
+                <div class="prize-value">$25 Gift Card</div>
+            </div>
+            <div class="prize-item">
+                <div class="prize-emoji">📧</div>
+                <div class="prize-label">Most Emails Sent</div>
+                <div class="prize-value">$25 Gift Card</div>
+            </div>
+            <div class="prize-item">
+                <div class="prize-emoji">🗺️</div>
+                <div class="prize-label">Top District (avg pts/rep)</div>
+                <div class="prize-value">$25/rep + Manager Bonus</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scoring key -->
+    <div class="scoring-key">
+        <span style="font-weight:600;color:#555;font-size:0.85em;">SCORING:</span>
+        <span class="score-pill s-deal">🏆 Deal Booked = 100 pts</span>
+        <span class="score-pill s-mtg">📅 Meeting Booked = 40 pts</span>
+        <span class="score-pill s-reg">📋 Deal Registration = 25 pts</span>
+        <span class="score-pill s-call">📞 Call Made = 3 pts</span>
+        <span class="score-pill s-email">📧 Email Sent = 1 pt</span>
+    </div>
+
+    <!-- Main content — rendered by JS -->
+    <div id="mainContent">
+        <div class="status-msg">⏳ Loading leaderboard…</div>
+    </div>
+
+    <!-- Setup instructions (shown until sheet URL is configured) -->
+    <div class="setup-box" id="setupBox" style="display:none;">
+        <h3>📋 How to connect your Google Sheet</h3>
+        <ol>
+            <li>Open your Google Sheet (or create one — see the template below)</li>
+            <li>Click <strong>File → Share → Publish to web</strong></li>
+            <li>Under "Link", choose <strong>Entire Document</strong> and <strong>Comma-separated values (.csv)</strong></li>
+            <li>Click <strong>Publish</strong> and copy the URL</li>
+            <li>Open <code>leaderboard.html</code>, find <code>SHEET_CSV_URL</code> near the top, and replace the placeholder with your URL</li>
+        </ol>
+        <p style="margin-top:16px;color:#555;font-size:0.9em;">
+            Your sheet should have these columns (in order):<br>
+            <code>Rep Name</code> &nbsp;|&nbsp; <code>District</code> &nbsp;|&nbsp;
+            <code>Calls Made</code> &nbsp;|&nbsp; <code>Emails Sent</code> &nbsp;|&nbsp;
+            <code>Meetings Booked</code> &nbsp;|&nbsp; <code>Deal Registrations</code> &nbsp;|&nbsp;
+            <code>Deals Booked</code>
+        </p>
+    </div>
+
+    <div class="footer">
+        SHI × Canva Spring 2026 Sales Blitz &nbsp;|&nbsp; Leaderboard updates when you refresh the page
+    </div>
+</div>
+
+<script>
+// ─────────────────────────────────────────────────────────────────────
+// 👇 REPLACE THIS URL with your published Google Sheet CSV link
+// File → Share → Publish to web → CSV → copy the URL
+// ─────────────────────────────────────────────────────────────────────
+const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSQfAgGAog09Rv9NlRNsM0SW076tZWBHm-rpJSZHE90duFGBWceQUzmgjbVDWI9avfcfZ0PtEN6cWSZ/pub?output=csv';
+
+// Point values
+const PTS = { deals: 100, meetings: 40, registrations: 25, calls: 3, emails: 1 };
+
+// Rep → district map (fallback if sheet doesn't include District column)
+const DISTRICT_MAP = {"mathew chacko":"Small Business-West District","tatiana sultzer":"Small Business-Central District","keenan womack":"Small Business-East District","logan shaw":"Small Business-Central District","zach page":"Small Business-East District","hayden riba":"Small Business-West District","austin dodson":"Small Business-East District","scott gray":"Small Business-East District","nancy bui":"Small Business-East District","phillip jackson":"Small Business-West District","olivia campbell":"Small Business-East District","jessica jorgensen":"Small Business-West District","cornelius sirls":"Small Business-West District","daniel cecilio":"Small Business-Central District","art barron":"Small Business-East District","isaac gallegos":"Small Business-Central District","wyatt speaks":"Small Business-East District","maria martins":"Small Business-West District","kat nelson":"Small Business-West District","aisha mohammed":"Small Business-East District","michael white":"Small Business-Central District","cade cunov":"Small Business-East District","john salas":"Small Business-Central District","olivia lora":"Small Business-Central District","jason fowler":"Small Business-Central District","chris porterfield":"Small Business-East District","aj yedinak":"Small Business-West District"};
+
+function distShort(d) {
+    return (d || '').replace('Small Business-','').replace(' District','');
+}
+
+function distClass(d) {
+    const s = distShort(d);
+    return s === 'East' ? 'district-east' : s === 'Central' ? 'district-central' : 'district-west';
+}
+
+function calcPoints(row) {
+    return (row.deals * PTS.deals) + (row.meetings * PTS.meetings) +
+           (row.registrations * PTS.registrations) + (row.calls * PTS.calls) + (row.emails * PTS.emails);
+}
+
+function parseCSV(text) {
+    const lines = text.trim().split('\n');
+    if (lines.length < 2) return [];
+    // Skip header row
+    return lines.slice(1).map(line => {
+        // Handle quoted fields
+        const cols = line.match(/(".*?"|[^,]+|(?<=,)(?=,)|(?<=,)$|^(?=,))/g) || line.split(',');
+        const clean = cols.map(c => c.replace(/^"|"$/g, '').trim());
+        const rep = clean[0] || '';
+        const district = clean[1] || DISTRICT_MAP[rep.toLowerCase()] || '';
+        return {
+            rep,
+            district,
+            calls:         parseInt(clean[2]) || 0,
+            emails:        parseInt(clean[3]) || 0,
+            meetings:      parseInt(clean[4]) || 0,
+            registrations: parseInt(clean[5]) || 0,
+            deals:         parseInt(clean[6]) || 0,
+        };
+    }).filter(r => r.rep && r.rep.toLowerCase() !== 'rep name');
+}
+
+function rankEmoji(i) {
+    if (i === 0) return '<span class="rank-1">🥇</span>';
+    if (i === 1) return '<span class="rank-2">🥈</span>';
+    if (i === 2) return '<span class="rank-3">🥉</span>';
+    return '<span class="rank-cell">' + (i + 1) + '</span>';
+}
+
+function renderLeaderboard(rows) {
+    // Compute points
+    const data = rows.map(r => ({ ...r, points: calcPoints(r) }));
+    data.sort((a, b) => b.points - a.points);
+
+    // Category leaders
+    const topCalls    = [...data].sort((a,b) => b.calls - a.calls)[0];
+    const topEmails   = [...data].sort((a,b) => b.emails - a.emails)[0];
+    const topMeetings = [...data].sort((a,b) => b.meetings - a.meetings)[0];
+    const topDeals    = [...data].sort((a,b) => b.deals - a.deals)[0];
+
+    // District standings
+    const distMap = {};
+    data.forEach(r => {
+        const d = r.district || DISTRICT_MAP[r.rep.toLowerCase()] || 'Unknown';
+        if (!distMap[d]) distMap[d] = { district: d, reps: 0, totalPts: 0, meetings: 0, deals: 0 };
+        distMap[d].reps++;
+        distMap[d].totalPts += r.points;
+        distMap[d].meetings += r.meetings;
+        distMap[d].deals += r.deals;
+    });
+    const distData = Object.values(distMap).map(d => ({
+        ...d,
+        avgPts: d.reps > 0 ? Math.round(d.totalPts / d.reps) : 0
+    })).sort((a,b) => b.avgPts - a.avgPts);
+
+    let html = '';
+
+    // — Category leaders —
+    html += `<div class="section">
+        <div class="section-title">⭐ Category Leaders</div>
+        <div class="category-leaders">`;
+
+    if (topDeals && topDeals.deals > 0) {
+        html += `<div class="leader-card lc-deals">
+            <div class="cat-emoji">🏆</div>
+            <div class="cat-label">Most Deals</div>
+            <div class="cat-name">${topDeals.rep}</div>
+            <div class="cat-value">${topDeals.deals} deal${topDeals.deals !== 1 ? 's' : ''}</div>
+        </div>`;
+    }
+
+    if (topMeetings && topMeetings.meetings > 0) {
+        html += `<div class="leader-card lc-mtgs">
+            <div class="cat-emoji">📅</div>
+            <div class="cat-label">Most Meetings</div>
+            <div class="cat-name">${topMeetings.rep}</div>
+            <div class="cat-value">${topMeetings.meetings} meeting${topMeetings.meetings !== 1 ? 's' : ''}</div>
+            <div class="cat-prize">$25/meeting earned</div>
+        </div>`;
+    }
+
+    if (topCalls && topCalls.calls > 0) {
+        html += `<div class="leader-card lc-calls">
+            <div class="cat-emoji">📞</div>
+            <div class="cat-label">Most Calls</div>
+            <div class="cat-name">${topCalls.rep}</div>
+            <div class="cat-value">${topCalls.calls.toLocaleString()} calls</div>
+            <div class="cat-prize">$25 prize up for grabs</div>
+        </div>`;
+    }
+
+    if (topEmails && topEmails.emails > 0) {
+        html += `<div class="leader-card lc-emails">
+            <div class="cat-emoji">📧</div>
+            <div class="cat-label">Most Emails</div>
+            <div class="cat-name">${topEmails.rep}</div>
+            <div class="cat-value">${topEmails.emails.toLocaleString()} emails</div>
+            <div class="cat-prize">$25 prize up for grabs</div>
+        </div>`;
+    }
+
+    html += `</div></div><div class="divider"></div>`;
+
+    // — Individual standings —
+    html += `<div class="section">
+        <div class="section-title">🏆 Individual Standings</div>
+        <div class="table-wrap">
+        <table>
+            <thead><tr>
+                <th>#</th>
+                <th>Rep</th>
+                <th>District</th>
+                <th style="text-align:right;">Points</th>
+                <th style="text-align:right;">🏆 Deals</th>
+                <th style="text-align:right;">📅 Meetings</th>
+                <th style="text-align:right;">📋 Registrations</th>
+                <th style="text-align:right;">📞 Calls</th>
+                <th style="text-align:right;">📧 Emails</th>
+            </tr></thead>
+            <tbody>`;
+
+    data.forEach((r, i) => {
+        const dist = r.district || DISTRICT_MAP[r.rep.toLowerCase()] || '';
+        const ds = distShort(dist);
+        const dc = distClass(dist);
+        html += `<tr>
+            <td>${rankEmoji(i)}</td>
+            <td class="rep-name">${r.rep}</td>
+            <td><span class="district-tag ${dc}">${ds}</span></td>
+            <td class="points-cell highlight-col" style="text-align:right;">${r.points.toLocaleString()}</td>
+            <td class="stat-num">${r.deals || '—'}</td>
+            <td class="stat-num">${r.meetings || '—'}</td>
+            <td class="stat-num">${r.registrations || '—'}</td>
+            <td class="stat-num">${r.calls.toLocaleString()}</td>
+            <td class="stat-num">${r.emails.toLocaleString()}</td>
+        </tr>`;
+    });
+
+    html += `</tbody></table></div></div><div class="divider"></div>`;
+
+    // — District standings —
+    html += `<div class="section">
+        <div class="section-title">🗺️ District Standings <span style="font-size:0.75em;font-weight:400;color:#888;">(ranked by avg pts per rep)</span></div>
+        <div class="table-wrap">
+        <table>
+            <thead class="district-head"><tr>
+                <th>#</th>
+                <th>District</th>
+                <th style="text-align:right;">Avg Pts / Rep</th>
+                <th style="text-align:right;">Total Points</th>
+                <th style="text-align:right;">Reps</th>
+                <th style="text-align:right;">Meetings</th>
+                <th style="text-align:right;">Deals</th>
+            </tr></thead>
+            <tbody>`;
+
+    distData.forEach((d, i) => {
+        const ds = distShort(d.district);
+        const dc = distClass(d.district);
+        const isWinner = i === 0;
+        html += `<tr class="${isWinner ? 'winner-row' : ''}">
+            <td class="dist-rank">${rankEmoji(i)}</td>
+            <td>
+                <span class="district-tag ${dc}">${ds}</span>
+                ${isWinner ? '<span class="winner-badge">🏆 Leading</span>' : ''}
+            </td>
+            <td class="avg-pts" style="text-align:right;">${d.avgPts.toLocaleString()}</td>
+            <td class="stat-num">${d.totalPts.toLocaleString()}</td>
+            <td class="stat-num">${d.reps}</td>
+            <td class="stat-num">${d.meetings}</td>
+            <td class="stat-num">${d.deals}</td>
+        </tr>`;
+    });
+
+    html += `</tbody></table></div></div>`;
+
+    document.getElementById('mainContent').innerHTML = html;
+    document.getElementById('lastUpdated').textContent =
+        'Last refreshed: ' + new Date().toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' });
+}
+
+function renderDemo() {
+    // Show sample data so Wes can see what it looks like before connecting the sheet
+    const sampleRows = [
+        { rep: 'isaac gallegos',   district: 'Small Business-Central District', calls: 45, emails: 38, meetings: 3, registrations: 2, deals: 1 },
+        { rep: 'art barron',       district: 'Small Business-East District',    calls: 52, emails: 41, meetings: 2, registrations: 1, deals: 1 },
+        { rep: 'keenan womack',    district: 'Small Business-East District',    calls: 38, emails: 29, meetings: 2, registrations: 2, deals: 0 },
+        { rep: 'aisha mohammed',   district: 'Small Business-East District',    calls: 31, emails: 44, meetings: 1, registrations: 1, deals: 0 },
+        { rep: 'john salas',       district: 'Small Business-Central District', calls: 40, emails: 22, meetings: 1, registrations: 0, deals: 0 },
+        { rep: 'hayden riba',      district: 'Small Business-West District',    calls: 29, emails: 35, meetings: 1, registrations: 1, deals: 0 },
+        { rep: 'wyatt speaks',     district: 'Small Business-East District',    calls: 22, emails: 18, meetings: 0, registrations: 1, deals: 0 },
+        { rep: 'maria martins',    district: 'Small Business-West District',    calls: 18, emails: 30, meetings: 0, registrations: 0, deals: 0 },
+    ];
+    renderLeaderboard(sampleRows);
+    document.getElementById('lastUpdated').textContent = '⚠️ Showing sample data — connect your Google Sheet to go live';
+    document.getElementById('setupBox').style.display = 'block';
+}
+
+// Main
+if (!SHEET_CSV_URL || SHEET_CSV_URL === 'YOUR_GOOGLE_SHEET_CSV_URL_HERE') {
+    renderDemo();
+} else if (window.location.protocol === 'file:') {
+    // Running locally — fetch is blocked by browser security. Show preview with notice.
+    renderDemo();
+    document.getElementById('lastUpdated').textContent = '⚠️ Preview mode — upload to GitHub Pages to load live data';
+    document.getElementById('mainContent').insertAdjacentHTML('afterbegin',
+        '<div style="background:#fff3cd;border:1px solid #ffc107;border-radius:10px;padding:14px 20px;margin:20px 30px 0;font-size:0.92em;color:#856404;">' +
+        '<strong>📋 Almost there!</strong> Your Google Sheet URL is connected, but live data only loads when this page is hosted on GitHub Pages — not when opened as a local file. ' +
+        'Upload <code>leaderboard.html</code> to your repo and open it from <strong>westhva.github.io/cvp-shi-sp26/leaderboard.html</strong> to see real data.' +
+        '</div>'
+    );
+} else {
+    fetch(SHEET_CSV_URL)
+        .then(r => {
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            return r.text();
+        })
+        .then(text => {
+            const rows = parseCSV(text);
+            if (rows.length === 0) throw new Error('No data found');
+            renderLeaderboard(rows);
+        })
+        .catch(err => {
+            document.getElementById('mainContent').innerHTML =
+                '<div class="status-msg error-msg">⚠️ Could not load leaderboard data.<br><small>' + err.message + '</small></div>';
+            document.getElementById('setupBox').style.display = 'block';
+            document.getElementById('lastUpdated').textContent = 'Error loading data';
+        });
+}
+</script>
+</body>
+</html>
