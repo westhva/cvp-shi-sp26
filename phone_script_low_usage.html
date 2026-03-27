@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Script - Low/No Usage Accounts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .script-section {
+            margin-bottom: 30px;
+        }
+        
+        .script-label {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #4ecdc4;
+            color: white;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        
+        .script-text {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #0072ff;
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+        
+        .script-text p {
+            margin-bottom: 15px;
+        }
+        
+        .script-text ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .script-text li {
+            margin-bottom: 8px;
+        }
+        
+        .script-text strong {
+            color: #0072ff;
+        }
+        
+        .opening { border-left-color: #28a745; }
+        .discovery { border-left-color: #ffc107; }
+        .positioning { border-left-color: #17a2b8; }
+        .anecdotes { border-left-color: #9b59b6; }
+        .ask { border-left-color: #dc3545; }
+        .pushback { border-left-color: #fd7e14; }
+        
+        .tips-box {
+            background: #e6f9f7;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #4ecdc4;
+            margin-top: 30px;
+        }
+        
+        .tips-box h3 {
+            color: #2c5f5c;
+            margin-bottom: 15px;
+        }
+        
+        .tips-box ul {
+            list-style-position: inside;
+            color: #2c5f5c;
+        }
+        
+        .tips-box li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ðŸ“ž Phone Outreach Script</h1>
+            <p>For Low/No Usage Accounts (ðŸ’¡ POTENTIAL & ðŸŒ± NEW)</p>
+        </div>
+        
+        <div class="content">
+            <div class="script-section">
+                <span class="script-label">OPENING</span>
+                <div class="script-text opening">
+                    <p><strong>"Hey [IT/Procurement Contact], it's [Rep Name] from SHI. Quick question for you on the software management side - do you have visibility into what design or content creation tools your teams are using?"</strong></p>
+                </div>
+            </div>
+            
+            <div class="script-section">
+                <span class="script-label">DISCOVERY</span>
+                <div class="script-text discovery">
+                    <p>"The reason I ask is we're seeing a lot of organizations with scattered design subscriptions - people expensing individual Canva or Adobe accounts, using free tools, that kind of thing. It usually shows up as shadow IT that procurement doesn't even know about."</p>
+                </div>
+            </div>
+            
+            <div class="script-section">
+                <span class="script-label">POSITIONING</span>
+                <div class="script-text positioning">
+                    <p>"We've been working with Canva to help consolidate that. From an IT perspective, the value is pretty straightforward:</p>
+                    <ul>
+                        <li><strong>SSO/SCIM integration</strong> so you're not managing another set of credentials</li>
+                        <li><strong>Centralized billing</strong> instead of 50 credit card subscriptions</li>
+                        <li><strong>Actually seeing who's using what</strong> through admin controls</li>
+                        <li><strong>Potential Adobe cost reduction</strong> - a lot of people have Creative Cloud seats when they really just need basic design capability"</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="script-section">
+                <span class="script-label">ANECDOTES (choose 1-2)</span>
+                <div class="script-text anecdotes">
+                    <p><strong>Option 1:</strong> "We had one client who discovered they had 73 individual Canva Pro subscriptions across the company at $120 each - nobody in procurement even knew. Consolidated to Enterprise, got better functionality, and they actually upped their quantity to get a high volume discount to lock in a better unit price."</p>
+                    <p><strong>Option 2:</strong> "Another client cut their Adobe CC footprint by 40% - moved people who were just making PowerPoints and social graphics to Canva, kept Adobe only for the actual design team."</p>
+                </div>
+            </div>
+            
+            <div class="script-section">
+                <span class="script-label">THE ASK (low pressure)</span>
+                <div class="script-text ask">
+                    <p>"Look, I'm not saying this is definitely the right fit for [Organization Name], but would you be open to a 30-minute call with Canva? They can show you what the admin side looks like and see if there's an efficiency play here. Worst case, you spend 30 minutes and decide it's not worth it. Best case, you get ahead of some shadow IT and maybe optimize some software spend."</p>
+                </div>
+            </div>
+            
+            <div class="script-section">
+                <span class="script-label">IF THEY PUSH BACK</span>
+                <div class="script-text pushback">
+                    <p>"Totally fair. Would it help if I just sent you a one-pager on what we're seeing from other clients? That way you can look at it when you have time."</p>
+                </div>
+            </div>
+            
+            <div class="tips-box">
+                <h3>ðŸ’¡ Key Tips for This Script:</h3>
+                <ul>
+                    <li><strong>Lead with shadow IT angle</strong> - This resonates with IT/Procurement</li>
+                    <li><strong>Use anecdotes</strong> - Real examples make it tangible (73 subscriptions, Adobe replacement)</li>
+                    <li><strong>Low pressure approach</strong> - "Just 30 minutes" feels less committal</li>
+                    <li><strong>Frame as efficiency play</strong> - Not a sales pitch, an operational improvement</li>
+                    <li><strong>Offer the easy out</strong> - One-pager option gives them a graceful exit while keeping door open</li>
+                    <li><strong>Position yourself as helpful</strong> - You're alerting them to something they might not know</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
