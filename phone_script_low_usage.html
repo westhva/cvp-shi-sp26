@@ -3,192 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone Script - Low/No Usage Accounts</title>
+    <title>Phone Script - Low Usage Accounts | SHI x Canva</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
-            color: white;
-            padding: 40px;
-            text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-        
-        .header p {
-            font-size: 1.1em;
-            opacity: 0.95;
-        }
-        
-        .content {
-            padding: 40px;
-        }
-        
-        .script-section {
-            margin-bottom: 30px;
-        }
-        
-        .script-label {
-            display: inline-block;
-            padding: 8px 16px;
-            background: #4ecdc4;
-            color: white;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9em;
-            margin-bottom: 15px;
-        }
-        
-        .script-text {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid #0072ff;
-            line-height: 1.8;
-            font-size: 1.05em;
-        }
-        
-        .script-text p {
-            margin-bottom: 15px;
-        }
-        
-        .script-text ul {
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-        
-        .script-text li {
-            margin-bottom: 8px;
-        }
-        
-        .script-text strong {
-            color: #0072ff;
-        }
-        
-        .opening { border-left-color: #28a745; }
-        .discovery { border-left-color: #ffc107; }
-        .positioning { border-left-color: #17a2b8; }
-        .anecdotes { border-left-color: #9b59b6; }
-        .ask { border-left-color: #dc3545; }
-        .pushback { border-left-color: #fd7e14; }
-        
-        .tips-box {
-            background: #e6f9f7;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 5px solid #4ecdc4;
-            margin-top: 30px;
-        }
-        
-        .tips-box h3 {
-            color: #2c5f5c;
-            margin-bottom: 15px;
-        }
-        
-        .tips-box ul {
-            list-style-position: inside;
-            color: #2c5f5c;
-        }
-        
-        .tips-box li {
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 40px 20px; }
+        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; padding: 40px; text-align: center; }
+        .header h1 { font-size: 2em; margin-bottom: 10px; }
+        .header p { font-size: 1.1em; opacity: 0.9; }
+        .content { padding: 40px; }
+        .tier-badge { display: inline-block; padding: 5px 14px; border-radius: 20px; font-size: 0.85em; font-weight: 700; margin: 0 4px; }
+        .tier-potential { background: #4ecdc4; color: white; }
+        .tier-new { background: #95e1d3; color: #333; }
+        h2 { font-size: 1.25em; color: #11998e; border-left: 4px solid #11998e; padding-left: 14px; margin: 32px 0 12px; }
+        h3 { font-size: 1.05em; color: #444; margin: 20px 0 8px; }
+        .script-box { background: #f0fff8; border: 1px solid #b3f0d9; border-radius: 10px; padding: 18px 22px; margin: 12px 0; color: #1a4a3a; font-style: italic; line-height: 1.7; }
+        .script-box strong { font-style: normal; color: #0a2a1a; }
+        .objection { background: #fff3e0; border-left: 4px solid #ff9800; padding: 12px 18px; border-radius: 0 8px 8px 0; margin: 10px 0; }
+        .objection .q { font-weight: 700; color: #e65100; }
+        .objection .a { color: #444; margin-top: 6px; font-style: italic; }
+        .tip { background: #e8f5e9; border-radius: 8px; padding: 12px 18px; margin: 16px 0; color: #1b5e20; font-size: 0.92em; }
+        .cta-box { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; border-radius: 12px; padding: 20px 24px; margin: 24px 0; }
+        .cta-box h3 { color: white; margin: 0 0 10px; }
+        .back-link { display: inline-block; color: #11998e; text-decoration: none; font-size: 0.9em; margin-bottom: 24px; }
+        .back-link:hover { text-decoration: underline; }
+        footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid #e9ecef; color: #999; font-size: 0.85em; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>ðŸ“ž Phone Outreach Script</h1>
-            <p>For Low/No Usage Accounts (ðŸ’¡ POTENTIAL & ðŸŒ± NEW)</p>
-        </div>
-        
-        <div class="content">
-            <div class="script-section">
-                <span class="script-label">OPENING</span>
-                <div class="script-text opening">
-                    <p><strong>"Hey [IT/Procurement Contact], it's [Rep Name] from SHI. Quick question for you on the software management side - do you have visibility into what design or content creation tools your teams are using?"</strong></p>
-                </div>
-            </div>
-            
-            <div class="script-section">
-                <span class="script-label">DISCOVERY</span>
-                <div class="script-text discovery">
-                    <p>"The reason I ask is we're seeing a lot of organizations with scattered design subscriptions - people expensing individual Canva or Adobe accounts, using free tools, that kind of thing. It usually shows up as shadow IT that procurement doesn't even know about."</p>
-                </div>
-            </div>
-            
-            <div class="script-section">
-                <span class="script-label">POSITIONING</span>
-                <div class="script-text positioning">
-                    <p>"We've been working with Canva to help consolidate that. From an IT perspective, the value is pretty straightforward:</p>
-                    <ul>
-                        <li><strong>SSO/SCIM integration</strong> so you're not managing another set of credentials</li>
-                        <li><strong>Centralized billing</strong> instead of 50 credit card subscriptions</li>
-                        <li><strong>Actually seeing who's using what</strong> through admin controls</li>
-                        <li><strong>Potential Adobe cost reduction</strong> - a lot of people have Creative Cloud seats when they really just need basic design capability"</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="script-section">
-                <span class="script-label">ANECDOTES (choose 1-2)</span>
-                <div class="script-text anecdotes">
-                    <p><strong>Option 1:</strong> "We had one client who discovered they had 73 individual Canva Pro subscriptions across the company at $120 each - nobody in procurement even knew. Consolidated to Enterprise, got better functionality, and they actually upped their quantity to get a high volume discount to lock in a better unit price."</p>
-                    <p><strong>Option 2:</strong> "Another client cut their Adobe CC footprint by 40% - moved people who were just making PowerPoints and social graphics to Canva, kept Adobe only for the actual design team."</p>
-                </div>
-            </div>
-            
-            <div class="script-section">
-                <span class="script-label">THE ASK (low pressure)</span>
-                <div class="script-text ask">
-                    <p>"Look, I'm not saying this is definitely the right fit for [Organization Name], but would you be open to a 30-minute call with Canva? They can show you what the admin side looks like and see if there's an efficiency play here. Worst case, you spend 30 minutes and decide it's not worth it. Best case, you get ahead of some shadow IT and maybe optimize some software spend."</p>
-                </div>
-            </div>
-            
-            <div class="script-section">
-                <span class="script-label">IF THEY PUSH BACK</span>
-                <div class="script-text pushback">
-                    <p>"Totally fair. Would it help if I just sent you a one-pager on what we're seeing from other clients? That way you can look at it when you have time."</p>
-                </div>
-            </div>
-            
-            <div class="tips-box">
-                <h3>ðŸ’¡ Key Tips for This Script:</h3>
-                <ul>
-                    <li><strong>Lead with shadow IT angle</strong> - This resonates with IT/Procurement</li>
-                    <li><strong>Use anecdotes</strong> - Real examples make it tangible (73 subscriptions, Adobe replacement)</li>
-                    <li><strong>Low pressure approach</strong> - "Just 30 minutes" feels less committal</li>
-                    <li><strong>Frame as efficiency play</strong> - Not a sales pitch, an operational improvement</li>
-                    <li><strong>Offer the easy out</strong> - One-pager option gives them a graceful exit while keeping door open</li>
-                    <li><strong>Position yourself as helpful</strong> - You're alerting them to something they might not know</li>
-                </ul>
-            </div>
-        </div>
+<div class="container">
+    <div class="header">
+        <h1>&#128222; Phone Outreach Script</h1>
+        <p>For Low Usage Accounts &mdash; <span class="tier-badge tier-potential">&#128161; POTENTIAL</span> and <span class="tier-badge tier-new">&#128279; NEW</span></p>
     </div>
+    <div class="content">
+        <a href="index.html" class="back-link">&#8592; Back to Dashboard</a>
+        <h2>Before You Call</h2>
+        <p>POTENTIAL accounts have some Canva free users but no paid seats. NEW accounts have little or no recorded usage. For both, this is an education and discovery call &mdash; plant the seed and aim for an intro call with Canva&#8217;s team.</p>
+        <h2>Opening</h2>
+        <div class="script-box"><strong>You:</strong> &#8220;Hi [Name], this is [Your Name] from SHI. I&#8217;m reaching out because we&#8217;ve been partnering with Canva to help companies get more out of their design and content tools. I wanted to grab two minutes to see if it might be relevant for your team.&#8221;</div>
+        <h2>Discovery Questions</h2>
+        <div class="script-box">&#8220;Quick question &mdash; does your team do any kind of content creation? Presentations, social posts, marketing materials, internal docs, that sort of thing?&#8221;</div>
+        <div class="script-box">&#8220;And what tools are you using for that today? PowerPoint, Adobe, anything like that?&#8221;</div>
+        <h2>The Pitch</h2>
+        <div class="script-box">&#8220;What a lot of companies in your space are finding is that Canva Enterprise replaces four or five tools in one platform &mdash; presentations, documents, social design, video editing, whiteboards. And teams get up to speed in minutes, not weeks like with Adobe.&#8221;</div>
+        <h2>Value Props to Work In</h2>
+        <h3>All-in-One</h3>
+        <div class="script-box">&#8220;Think of it as the platform where everyone on your team &mdash; not just designers &mdash; can create professional content. Sales decks, HR materials, training docs, you name it.&#8221;</div>
+        <h3>Enterprise Grade</h3>
+        <div class="script-box">&#8220;On the enterprise side you get SSO, SCIM, SOC 2 compliance, brand management, and admin controls. It&#8217;s built for companies at your scale.&#8221;</div>
+        <h3>Procurement</h3>
+        <div class="script-box">&#8220;And because we&#8217;re SHI, we handle the whole procurement side &mdash; one invoice, PO support, renewals managed for you.&#8221;</div>
+        <h2>Common Objections</h2>
+        <div class="objection"><div class="q">&#8220;We already use PowerPoint / Adobe / Google.&#8221;</div><div class="a">&#8220;Totally &mdash; Canva isn&#8217;t about replacing everything at once. Most teams start using it alongside existing tools and find it gradually replaces them. A lot of companies actually reduce their overall software spend. Worth a 20-minute look?&#8221;</div></div>
+        <div class="objection"><div class="q">&#8220;We&#8217;re not looking for new software right now.&#8221;</div><div class="a">&#8220;I hear you &mdash; timing is everything. But if there&#8217;s ever a point where you&#8217;re evaluating design or content tools, I&#8217;d love to make sure Canva is on the shortlist. Can I send you a quick overview to keep on file?&#8221;</div></div>
+        <div class="objection"><div class="q">&#8220;Send me an email.&#8221;</div><div class="a">&#8220;Absolutely! Would it be okay if I also set up a quick intro call with Canva&#8217;s team? They can tailor it to your specific situation &mdash; no sales pitch, just a look at whether it fits.&#8221;</div></div>
+        <div class="cta-box"><h3>&#127942; Goal: Book the Discovery Call</h3><p>&#8220;What I&#8217;d suggest is a quick 20-minute intro with Canva&#8217;s team. No commitment, no sales pitch &mdash; just a chance to see if it&#8217;s relevant for you. Do you have 20 minutes in the next week or two?&#8221;</p></div>
+        <h2>Close</h2>
+        <div class="script-box">&#8220;Perfect &mdash; I&#8217;ll send a calendar invite now and copy in the Canva team. Really appreciate your time today!&#8221;</div>
+        <div class="tip">&#128161; <strong>Tip:</strong> Even if they don&#8217;t book a meeting today, a call still counts for 3 pts and an email follow-up is 1 pt. Every touchpoint adds up!</div>
+        <footer>SHI &times; Canva | Spring 2026 Sales Blitz | For internal use only</footer>
+    </div>
+</div>
 </body>
 </html>

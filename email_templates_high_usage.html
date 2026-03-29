@@ -3,255 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Templates - High Usage Accounts</title>
+    <title>Email Templates - High Usage | SHI x Canva</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-            color: white;
-            padding: 40px;
-            text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-        
-        .header p {
-            font-size: 1.1em;
-            opacity: 0.95;
-        }
-        
-        .content {
-            padding: 40px;
-        }
-        
-        .template-section {
-            margin-bottom: 50px;
-            padding-bottom: 30px;
-            border-bottom: 3px solid #e9ecef;
-        }
-        
-        .template-section:last-of-type {
-            border-bottom: none;
-        }
-        
-        .template-header {
-            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .template-header h2 {
-            font-size: 1.5em;
-            margin-bottom: 5px;
-        }
-        
-        .template-header p {
-            opacity: 0.9;
-        }
-        
-        .email-box {
-            background: #f8f9fa;
-            border: 2px solid #28a745;
-            border-radius: 10px;
-            padding: 25px;
-            font-size: 1.05em;
-            line-height: 1.7;
-        }
-        
-        .email-subject {
-            background: white;
-            padding: 15px;
-            border-radius: 5px;
-            border-left: 4px solid #28a745;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        
-        .email-body p {
-            margin-bottom: 15px;
-        }
-        
-        .email-body ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-        
-        .email-body li {
-            margin-bottom: 8px;
-        }
-        
-        .email-body strong {
-            color: #28a745;
-        }
-        
-        .placeholder {
-            background: #fff3cd;
-            padding: 2px 6px;
-            border-radius: 3px;
-            color: #856404;
-            font-style: italic;
-        }
-        
-        .tips-box {
-            background: #d4edda;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 5px solid #28a745;
-            margin-top: 30px;
-        }
-        
-        .tips-box h3 {
-            color: #155724;
-            margin-bottom: 15px;
-        }
-        
-        .tips-box ul {
-            list-style-position: inside;
-            color: #155724;
-        }
-        
-        .tips-box li {
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 40px 20px; }
+        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%); color: white; padding: 40px; text-align: center; }
+        .header h1 { font-size: 2em; margin-bottom: 10px; }
+        .header p { font-size: 1.1em; opacity: 0.9; }
+        .content { padding: 40px; }
+        h2 { font-size: 1.25em; color: #0072ff; border-left: 4px solid #0072ff; padding-left: 14px; margin: 32px 0 12px; }
+        .email-box { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 10px; padding: 22px 26px; margin: 12px 0; }
+        .email-label { font-size: 0.8em; text-transform: uppercase; letter-spacing: 1px; color: #888; font-weight: 700; margin-bottom: 8px; }
+        .subject { font-weight: 700; color: #333; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid #e9ecef; }
+        .body-text { color: #444; white-space: pre-line; line-height: 1.7; }
+        .tip { background: #e3f2fd; border-radius: 8px; padding: 12px 18px; margin: 20px 0; color: #0d47a1; font-size: 0.92em; }
+        .back-link { display: inline-block; color: #0072ff; text-decoration: none; font-size: 0.9em; margin-bottom: 24px; }
+        .back-link:hover { text-decoration: underline; }
+        footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid #e9ecef; color: #999; font-size: 0.85em; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>ðŸ“§ Email Templates</h1>
-            <p>For High Usage Accounts (ðŸ”¥ HOT & â­ WARM)</p>
-        </div>
-        
-        <div class="content">
-            <!-- Template 1 -->
-            <div class="template-section">
-                <div class="template-header">
-                    <h2>Template 1: Direct & Data-Driven</h2>
-                    <p>Best for initial outreach when you have usage data</p>
-                </div>
-                
-                <div class="email-box">
-                    <div class="email-subject">
-                        <strong>Subject:</strong> This may surprise you, summary of your Canva usage
-                    </div>
-                    
-                    <div class="email-body">
-                        <p>Hi <span class="placeholder">[relevant key contact]</span>,</p>
-                        <p>Hope you're doing well.</p>
-                        <p>Wanted to let you know that we've recently brought on Canva as a new software vendor.</p>
-                        <p>Canva has a process where I can request high level usage insights for my customers and I've proactively asked for your summary.</p>
-                        <p><strong>Key finding:</strong> There are <span class="placeholder">[X]</span> number of unique users using Canva at <span class="placeholder">[Organisation name]</span></p>
-                        <p>Most of these users will likely be on individual licences, which present the following shortfalls/risks:</p>
-                        <ul>
-                            <li>Design content is owned by individuals, with no ability to retain IP if employees depart</li>
-                            <li>No single sign on</li>
-                            <li>Licence is tied to a specific user, with no ability to reallocate licences</li>
-                            <li>No centralised billing, credit card purchasing only</li>
-                            <li>No ability to control AI usage and opt users out of model training</li>
-                        </ul>
-                        <p>To address these challenges, we're providing Canva Enterprise to our customers which gives full control over all of the above - and much more.</p>
-                        <p>If you're open to it, I'd like to set up a meeting to review your current usage and explore how Canva Enterprise might better align to your IT governance/compliance standards.</p>
-                        <p>I'd also bring along a Canva specialist to help with any questions you might have.</p>
-                        <p>Following the meeting, Canva can also provide the actual user email IDs and version types to give you a full picture.</p>
-                        <p>Please let me know if any of these dates/times could work for you?</p>
-                        <p><span class="placeholder">[Time 1]</span><br>
-                        <span class="placeholder">[Time 2]</span><br>
-                        <span class="placeholder">[Time 3]</span></p>
-                        <p>Best regards,<br>
-                        <span class="placeholder">[Your Name]</span></p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Template 2 -->
-            <div class="template-section">
-                <div class="template-header">
-                    <h2>Template 2: Direct & Urgent</h2>
-                    <p>More assertive, emphasizes risk and IP ownership</p>
-                </div>
-                
-                <div class="email-box">
-                    <div class="email-subject">
-                        <strong>Subject:</strong> Your Canva Account
-                    </div>
-                    
-                    <div class="email-body">
-                        <p>Hi <span class="placeholder">[first_name]</span>,</p>
-                        <p>Quite a few of your team members (<span class="placeholder">[X users]</span> to be exact) are using Canva to design, collaborate on projects, and to drive campaigns.</p>
-                        <p>This is happening outside of any Enterprise Service Agreement. That means all of that content, IP, and brand work? It's owned by the individual users, not <span class="placeholder">[Account.name]</span>.</p>
-                        <p>Most people don't realize Canva offers a corporate-grade platform designed not just to protect the business and its IP, but to empower users to work, collaborate, and create on-brand content at scale.</p>
-                        <p>I know you're busy running the show. If you'd rather connect me with someone who oversees internal tools, brand, or comms tech, I'd be happy to help consolidate the rogue accounts under one <span class="placeholder">[company]</span> account.</p>
-                        <p>Best,<br>
-                        <span class="placeholder">[Your Name]</span></p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Template 3 -->
-            <div class="template-section">
-                <div class="template-header">
-                    <h2>Template 3: Consultative & Helpful</h2>
-                    <p>Softer approach, positions you as advisor</p>
-                </div>
-                
-                <div class="email-box">
-                    <div class="email-subject">
-                        <strong>Subject:</strong> Quick question about your team's Canva usage
-                    </div>
-                    
-                    <div class="email-body">
-                        <p>Hi <span class="placeholder">[Customer Name]</span>,</p>
-                        <p>I wanted to reach out because I noticed <span class="placeholder">[Organization Name]</span> is using Canva across your team.</p>
-                        <p>As your SHI rep, I work closely with Canva to help organizations like yours get more value from tools you're already using. Based on your current usage, it looks like you might benefit from their Enterprise plan - better admin controls, centralized billing, brand management, and usually better pricing than individual subscriptions.</p>
-                        <p>I'd love to connect you with our Canva team for a quick 30-minute call. They can review your current usage and show you what an Enterprise setup would look like for <span class="placeholder">[Organization Name]</span>. No obligation - just want to make sure you're getting the most value.</p>
-                        <p>Are you open to a brief intro call in the next week or two? I'll join to help facilitate.</p>
-                        <p>Let me know what works for you.</p>
-                        <p>Best,<br>
-                        <span class="placeholder">[Rep Name]</span><br>
-                        SHI</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="tips-box">
-                <h3>ðŸ’¡ Tips for Using These Templates:</h3>
-                <ul>
-                    <li><strong>Template 1:</strong> Use when you have strong data (high user count). Most formal and comprehensive.</li>
-                    <li><strong>Template 2:</strong> Use for executive-level contacts. Direct and emphasizes business risk.</li>
-                    <li><strong>Template 3:</strong> Use for warmer relationships or follow-ups. Most consultative.</li>
-                    <li><strong>Personalize!</strong> Don't just fill in the blanks - add a personal touch or reference</li>
-                    <li><strong>Keep it short:</strong> Busy execs skim emails. Template 2 is the shortest for a reason</li>
-                    <li><strong>Always offer specific times:</strong> Makes it easier for them to say yes</li>
-                </ul>
-            </div>
-        </div>
+<div class="container">
+    <div class="header">
+        <h1>&#128140; Email Templates &mdash; High Usage</h1>
+        <p>For <strong>&#128293; HOT</strong> and <strong>&#127754; WARM</strong> accounts &mdash; SHI &times; Canva Spring 2026</p>
     </div>
+    <div class="content">
+        <a href="index.html" class="back-link">&#8592; Back to Dashboard</a>
+        <h2>Template 1: HOT Account (10+ Paid Seats)</h2>
+        <div class="email-box">
+            <div class="email-label">Subject</div>
+            <div class="subject">Your team&#8217;s Canva subscription &mdash; let&#8217;s move it through SHI</div>
+            <div class="email-label" style="margin-top:16px;">Body</div>
+            <div class="body-text">Hi [First Name],
+
+I noticed your team is already using Canva &mdash; great to see! I wanted to reach out because moving your subscription through SHI is a quick win for you.
+
+Here&#8217;s what you&#8217;d get:
+&bull; Proper enterprise invoicing and PO support
+&bull; SSO, SCIM provisioning, and admin controls
+&bull; Brand kits, approval workflows, and SOC 2 compliance
+&bull; One consolidated renewal managed by us
+
+Most companies we help make this switch actually end up saving money too.
+
+Would you be open to a quick 20-minute call with Canva&#8217;s enterprise team? I&#8217;d love to set that up for you.
+
+[Your name]
+SHI</div>
+        </div>
+        <h2>Template 2: WARM Account (High Free Usage)</h2>
+        <div class="email-box">
+            <div class="email-label">Subject</div>
+            <div class="subject">Your team is already using Canva &mdash; here&#8217;s what you&#8217;re missing</div>
+            <div class="email-label" style="margin-top:16px;">Body</div>
+            <div class="body-text">Hi [First Name],
+
+I can see [X] people at [Company] are already creating in Canva &mdash; which means your team has already found the value. The free tier is a great start, but there&#8217;s a lot more waiting for you.
+
+Upgrading to Canva Enterprise (through SHI) unlocks:
+&bull; Premium templates and brand kits
+&bull; Background remover, video editing, and AI design tools
+&bull; Enterprise admin controls and SSO
+&bull; Procurement through SHI with proper invoicing
+
+I&#8217;d love to set up a quick intro call with Canva&#8217;s team &mdash; no pressure, just a chance to see what it looks like for a company your size.
+
+Worth 20 minutes?
+
+[Your name]
+SHI</div>
+        </div>
+        <h2>Template 3: Follow-Up (After No Response)</h2>
+        <div class="email-box">
+            <div class="email-label">Subject</div>
+            <div class="subject">Re: Canva for [Company Name]</div>
+            <div class="email-label" style="margin-top:16px;">Body</div>
+            <div class="body-text">Hi [First Name],
+
+Just following up on my last note. I know inboxes get busy &mdash; totally understand.
+
+One thing I wanted to flag: we&#8217;re running a Spring 2026 promotion with Canva right now, so if there&#8217;s any interest in exploring enterprise pricing, now&#8217;s a good time.
+
+Happy to keep it to a 20-minute call. Would [Day] or [Day] work?
+
+[Your name]
+SHI</div>
+        </div>
+        <div class="tip">&#128161; <strong>Personalisation tip:</strong> Replace [X] with the actual YAU count from your dashboard. Specific numbers get replies.</div>
+        <footer>SHI &times; Canva | Spring 2026 Sales Blitz | For internal use only</footer>
+    </div>
+</div>
 </body>
 </html>

@@ -3,193 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone Script - High Usage Accounts</title>
+    <title>Phone Script - High Usage Accounts | SHI x Canva</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
-            color: white;
-            padding: 40px;
-            text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-        
-        .header p {
-            font-size: 1.1em;
-            opacity: 0.95;
-        }
-        
-        .content {
-            padding: 40px;
-        }
-        
-        .script-section {
-            margin-bottom: 30px;
-        }
-        
-        .script-label {
-            display: inline-block;
-            padding: 8px 16px;
-            background: #667eea;
-            color: white;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9em;
-            margin-bottom: 15px;
-        }
-        
-        .script-text {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid #0072ff;
-            line-height: 1.8;
-            font-size: 1.05em;
-        }
-        
-        .script-text p {
-            margin-bottom: 15px;
-        }
-        
-        .script-text strong {
-            color: #0072ff;
-        }
-        
-        .opening { border-left-color: #28a745; }
-        .discovery { border-left-color: #ffc107; }
-        .pitch { border-left-color: #17a2b8; }
-        .reason { border-left-color: #dc3545; }
-        .followthrough { border-left-color: #6f42c1; }
-        .setup { border-left-color: #fd7e14; }
-        
-        .tips-box {
-            background: #fff9e6;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 5px solid #ffc107;
-            margin-top: 30px;
-        }
-        
-        .tips-box h3 {
-            color: #856404;
-            margin-bottom: 15px;
-        }
-        
-        .tips-box ul {
-            list-style-position: inside;
-            color: #856404;
-        }
-        
-        .tips-box li {
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 40px 20px; }
+        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%); color: white; padding: 40px; text-align: center; }
+        .header h1 { font-size: 2em; margin-bottom: 10px; }
+        .header p { font-size: 1.1em; opacity: 0.9; }
+        .content { padding: 40px; }
+        .tier-badge { display: inline-block; padding: 5px 14px; border-radius: 20px; font-size: 0.85em; font-weight: 700; margin: 0 4px; }
+        .tier-hot { background: #ff6b6b; color: white; }
+        .tier-warm { background: #ffa500; color: white; }
+        h2 { font-size: 1.25em; color: #0072ff; border-left: 4px solid #0072ff; padding-left: 14px; margin: 32px 0 12px; }
+        h3 { font-size: 1.05em; color: #444; margin: 20px 0 8px; }
+        .script-box { background: #f0f7ff; border: 1px solid #b3d4ff; border-radius: 10px; padding: 18px 22px; margin: 12px 0; color: #1a3a6b; font-style: italic; line-height: 1.7; }
+        .script-box strong { font-style: normal; color: #003080; }
+        .objection { background: #fff3e0; border-left: 4px solid #ff9800; padding: 12px 18px; border-radius: 0 8px 8px 0; margin: 10px 0; }
+        .objection .q { font-weight: 700; color: #e65100; }
+        .objection .a { color: #444; margin-top: 6px; font-style: italic; }
+        .tip { background: #e8f5e9; border-radius: 8px; padding: 12px 18px; margin: 16px 0; color: #1b5e20; font-size: 0.92em; }
+        .cta-box { background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%); color: white; border-radius: 12px; padding: 20px 24px; margin: 24px 0; }
+        .cta-box h3 { color: white; margin: 0 0 10px; }
+        .back-link { display: inline-block; color: #0072ff; text-decoration: none; font-size: 0.9em; margin-bottom: 24px; }
+        .back-link:hover { text-decoration: underline; }
+        footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid #e9ecef; color: #999; font-size: 0.85em; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>ðŸ“ž Phone Outreach Script</h1>
-            <p>For High Usage Accounts (ðŸ”¥ HOT & â­ WARM)</p>
-        </div>
-        
-        <div class="content">
-            <div class="script-section">
-                <span class="script-label">OPENING</span>
-                <div class="script-text opening">
-                    <p><strong>Hi [relevant key contact], [Your Name] from SHI, how are you?</strong></p>
-                    <p>I wanted to let you know that we've recently brought on Canva as a new software vendor.</p>
-                </div>
-            </div>
-            
-            <div class="script-section">
-                <span class="script-label">DISCOVERY QUESTION</span>
-                <div class="script-text discovery">
-                    <p><strong>Are you familiar with Canva as a product? Have you heard your family or friends say they've used Canva to design something?</strong></p>
-                </div>
-            </div>
-            
-            <div class="script-section">
-                <span class="script-label">SAMPLE PRODUCT PITCH (if contact has not heard of Canva)</span>
-                <div class="script-text pitch">
-                    <p>Canva is the world's most popular design tool with 260m people per month now using the product. We've decided to take it on because so many of our customers are now using it.</p>
-                    <p>It's a web-based design platform that makes it easy for anyone, whether you're a professional designer or a complete beginner, to create high-quality visual content.</p>
-                    <p>It's essentially a "design tool for everyone," offering a drag-and-drop interface, thousands of templates, stock photos, icons, fonts, and other design elements.</p>
-                    <p>Users can make social media graphics, presentations, posters, videos, logos, marketing materials, and moreâ€”all without needing complex and expensive software like Adobe Photoshop or Illustrator.</p>
-                </div>
-            </div>
-            
-            <div class="script-section">
-                <span class="script-label">REASON FOR CALL</span>
-                <div class="script-text reason">
-                    <p>Canva has a process where I can request high level usage insights for my customers and I've proactively asked for your summary. I have the results back and wanted to share with you that <strong>[X] number of unique users are using Canva at [Organization name]</strong>.</p>
-                </div>
-            </div>
-            
-            <div class="script-section">
-                <span class="script-label">DISCOVERY QUESTION</span>
-                <div class="script-text discovery">
-                    <p><strong>I'm doing this exercise with a lot of my customers and they're often surprised that there's so much usage of Canva in their organisation, were you expecting it to be this high?</strong></p>
-                </div>
-            </div>
-            
-            <div class="script-section">
-                <span class="script-label">FOLLOW THROUGH</span>
-                <div class="script-text followthrough">
-                    <p>Most of the customers I'm sharing this information with are getting surprised by the number of people using Canva within their organisation. The main reason I'm proactively getting this information for my customers is that the people using Canva at work are likely using an individual licence, which presents quite a few risks to an organisation of your size. The big 3 things that I like to make my customers aware of are as follows:</p>
-                    <p><strong>Firstly,</strong> if a user is licensed with the individual version, the <strong>design content is owned by the user, not the company</strong>. There's also <strong>no ability to retain design IP</strong> if an employee departs.</p>
-                    <p><strong>Secondly,</strong> individual licences can <strong>only be paid for by credit card</strong> and the <strong>licence is always tied to that user</strong>, with <strong>no ability to transfer that licence</strong>. If a user leaves the organisation, <strong>they take their software with them</strong>.</p>
-                    <p><strong>And lastly,</strong> it <strong>doesn't offer Single Sign On</strong> or give you the ability to control important security items such as <strong>AI usage and model training</strong>.</p>
-                </div>
-            </div>
-            
-            <div class="script-section">
-                <span class="script-label">SET UP TO GET THE MEETING</span>
-                <div class="script-text setup">
-                    <p>Based on my understanding of how you like to manage software in your organisation, I felt like it was worth making you aware. To address these challenges with my customers, I wanted to let you know that Canva have a version that gives you full control over everything we've spoken about called <strong>Canva Enterprise</strong>.</p>
-                    <p><strong>Discovery Question:</strong> If you're open to it, I'd like to set up a follow meeting with you to review your current usage in more detail and explore how Canva Enterprise might better align to your IT governance/compliance standards. How does that sound?</p>
-                    <p><strong>Follow through:</strong> Great, I'd also bring along a specialist from Canva to help with any questions you might have. At a later stage, they can also provide the actual user email IDs and version types to give you a full picture as well.</p>
-                    <p><strong>Could any of these dates/times work for you?</strong></p>
-                    <p><em>[Propose times/dates, coordinate with Canva AE on times]</em></p>
-                </div>
-            </div>
-            
-            <div class="tips-box">
-                <h3>ðŸ’¡ Key Tips for This Script:</h3>
-                <ul>
-                    <li><strong>Be conversational</strong> - Don't read it word-for-word, use it as a guide</li>
-                    <li><strong>Lead with data</strong> - The usage number is your hook ("X users at your company")</li>
-                    <li><strong>Focus on risk</strong> - IP ownership, credit card sprawl, lack of SSO are real IT concerns</li>
-                    <li><strong>Position as helpful</strong> - You're making them aware of something they should know</li>
-                    <li><strong>Bring Canva specialist</strong> - Always mention you'll bring a Canva expert to the meeting</li>
-                </ul>
-            </div>
-        </div>
+<div class="container">
+    <div class="header">
+        <h1>&#128222; Phone Outreach Script</h1>
+        <p>For High Usage Accounts &mdash; <span class="tier-badge tier-hot">&#128293; HOT</span> and <span class="tier-badge tier-warm">&#127754; WARM</span></p>
     </div>
+    <div class="content">
+        <a href="index.html" class="back-link">&#8592; Back to Dashboard</a>
+        <h2>Before You Call</h2>
+        <p>Check the dashboard for this account&#8217;s YAU and Paid Users count. HOT accounts have 10+ paid seats &mdash; the goal is moving billing to SHI. WARM accounts have high free usage &mdash; the goal is converting to paid.</p>
+        <h2>Opening</h2>
+        <div class="script-box"><strong>You:</strong> &#8220;Hi [Name], this is [Your Name] from SHI. I&#8217;m reaching out because I can see your team is already using Canva &mdash; and I wanted to have a quick two-minute chat about how we can make that even better for you through a proper enterprise agreement.&#8221;</div>
+        <h2>For HOT Accounts (10+ Paid Seats)</h2>
+        <div class="script-box">&#8220;I can see your team is already paying for Canva. Right now that&#8217;s probably on individual credit cards or a direct subscription. What I&#8217;d love to do is move that billing through SHI so you get proper invoicing, PO support, and consolidated software spend &mdash; all the enterprise controls that go with it.&#8221;</div>
+        <h2>For WARM Accounts (High Free Usage)</h2>
+        <div class="script-box">&#8220;I can see [X] people at your company are already using Canva&#8217;s free tier. Teams that make the jump to paid see a big difference &mdash; premium templates, brand kits, background remover, video editing, and admin controls. I&#8217;d love to show you what that looks like for your team.&#8221;</div>
+        <h2>Value Props to Work In</h2>
+        <h3>Enterprise Controls</h3>
+        <div class="script-box">&#8220;An enterprise agreement through SHI gives you SSO, SCIM provisioning, SOC 2 compliance, and admin controls &mdash; things your IT team will love.&#8221;</div>
+        <h3>Cost Consolidation</h3>
+        <div class="script-box">&#8220;Most companies we work with actually save money when they consolidate under a single enterprise agreement versus scattered individual subscriptions.&#8221;</div>
+        <h3>Expansion</h3>
+        <div class="script-box">&#8220;If the people who are using it are getting value, there are probably more people in the org who&#8217;d benefit too. Enterprise makes it easy to roll out company-wide.&#8221;</div>
+        <h2>Common Objections</h2>
+        <div class="objection"><div class="q">&#8220;We already have a Canva subscription directly.&#8221;</div><div class="a">&#8220;Totally &mdash; that&#8217;s actually why I&#8217;m calling. Moving to SHI means you get proper procurement, a single invoice, and enterprise-grade support. We handle the renewal so it doesn&#8217;t fall through the cracks.&#8221;</div></div>
+        <div class="objection"><div class="q">&#8220;Not sure if we&#8217;re ready to commit.&#8221;</div><div class="a">&#8220;That&#8217;s fair &mdash; no pressure at all. Would you be open to a quick 20-minute call with Canva&#8217;s team? They can show you what enterprise looks like for a company your size. No commitment required.&#8221;</div></div>
+        <div class="objection"><div class="q">&#8220;We&#8217;re happy with what we have.&#8221;</div><div class="a">&#8220;Great to hear! If your team is getting value, it might be worth a quick look at what else is available &mdash; there are features in the paid tier that most free users don&#8217;t know exist. Can I send you a quick overview?&#8221;</div></div>
+        <div class="cta-box"><h3>&#127942; Goal: Book the Meeting</h3><p>&#8220;What I&#8217;d love to do is set up a quick 20-minute intro call between you and Canva&#8217;s enterprise team. They can walk you through what an agreement would look like for your specific setup. When&#8217;s a good time in the next week or two?&#8221;</p></div>
+        <h2>Close</h2>
+        <div class="script-box">&#8220;Awesome &mdash; I&#8217;ll send you a calendar invite now and copy in the Canva team. Looking forward to connecting you both. Have a great day!&#8221;</div>
+        <div class="tip">&#128161; <strong>Tip:</strong> If they agree to a meeting, log it in the leaderboard sheet immediately. Each meeting booked is worth 40 pts and a $25 gift card!</div>
+        <footer>SHI &times; Canva | Spring 2026 Sales Blitz | For internal use only</footer>
+    </div>
+</div>
 </body>
 </html>
