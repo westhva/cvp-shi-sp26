@@ -8,89 +8,172 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:#f4f6f8; padding:24px 16px; color:#222; }
 .container { max-width:740px; margin:0 auto; }
-.header { background:linear-gradient(135deg,#11998e 0%,#38ef7d 100%); color:white; border-radius:16px; padding:28px 32px; margin-bottom:20px; }
+.header { background:linear-gradient(135deg,#7c3aed 0%,#4f46e5 100%); color:white; border-radius:16px; padding:28px 32px; margin-bottom:20px; }
 .header h1 { font-size:1.5em; font-weight:800; margin-bottom:4px; }
 .header p { opacity:0.9; font-size:0.95em; }
-.biz-spotlight { background:linear-gradient(135deg,#1a1a2e 0%,#0f3460 100%); color:white; border-radius:14px; padding:22px 28px; margin-bottom:20px; border-left:5px solid #f39c12; }
-.biz-spotlight h3 { color:#f39c12; font-size:1.05em; margin-bottom:8px; }
-.biz-spotlight p { font-size:0.9em; line-height:1.6; color:rgba(255,255,255,0.9); }
+.strategy-bar { background:#1e293b; color:white; border-radius:14px; padding:18px 24px; margin-bottom:20px; border-left:5px solid #7c3aed; }
+.strategy-bar h3 { font-size:0.95em; color:#c4b5fd; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.5px; }
+.strategy-bar p { font-size:0.9em; line-height:1.6; color:rgba(255,255,255,0.88); }
 .card { background:white; border-radius:14px; padding:22px 28px; margin-bottom:16px; box-shadow:0 3px 12px rgba(0,0,0,0.07); }
 .card h2 { font-size:1.05em; font-weight:700; margin-bottom:6px; }
-.card .subtitle { font-size:0.82em; color:#888; margin-bottom:16px; }
-.subject-line { background:#f1f5f9; border-radius:8px; padding:10px 14px; font-size:0.88em; margin-bottom:14px; }
-.subject-line span { font-weight:700; color:#555; font-size:0.8em; text-transform:uppercase; letter-spacing:0.5px; display:block; margin-bottom:3px; }
-.email-body { background:#f8fafc; border:1.5px solid #e2e8f0; border-radius:10px; padding:18px 20px; font-size:0.88em; line-height:1.75; color:#2d3748; white-space:pre-wrap; }
-.fill { background:#dcfce7; padding:1px 5px; border-radius:4px; font-weight:600; color:#15803d; }
-.tip { background:#fffbeb; border-left:4px solid #fcd34d; border-radius:0 8px 8px 0; padding:10px 14px; font-size:0.82em; color:#78350f; margin-top:12px; }
+.card .subtitle { font-size:0.85em; color:#888; margin-bottom:16px; }
+.card p, .card li { font-size:0.92em; line-height:1.65; color:#333; }
+.card ul { padding-left:18px; }
+.card li { margin-bottom:5px; }
+.email-meta { background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:10px 14px; margin-bottom:12px; font-size:0.85em; color:#555; }
+.email-meta strong { color:#222; }
+.email-body { background:#f5f3ff; border:2px solid #c4b5fd; border-radius:10px; padding:18px 20px; font-size:0.9em; line-height:1.8; color:#2e1065; white-space:pre-wrap; }
+.email-body-ent { background:#f0fdf4; border-color:#86efac; color:#14532d; }
+.fill { background:#ede9fe; padding:1px 5px; border-radius:4px; font-weight:600; color:#5b21b6; }
+.tip { background:#fffbeb; border-left:4px solid #fcd34d; border-radius:0 8px 8px 0; padding:10px 14px; font-size:0.85em; color:#78350f; margin-top:12px; }
+.seq { display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap; }
+.seq-step { background:#7c3aed; color:white; border-radius:8px; padding:5px 12px; font-size:0.78em; font-weight:700; }
+.seq-step.grey { background:#94a3b8; }
+.seq-arrow { color:#94a3b8; align-self:center; font-size:1em; }
+.label-tag { display:inline-block; font-size:0.72em; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; border-radius:4px; padding:2px 7px; margin-bottom:10px; }
+.tag-edu { background:#ede9fe; color:#5b21b6; }
+.tag-ent { background:#dcfce7; color:#166534; }
+.tag-follow { background:#fef9c3; color:#92400e; }
+.tag-break { background:#fee2e2; color:#991b1b; }
+.warn { background:#fff7ed; border-left:4px solid #f97316; border-radius:0 8px 8px 0; padding:10px 14px; font-size:0.85em; color:#9a3412; margin-top:10px; }
 </style>
 </head>
 <body>
 <div class="container">
 
 <div class="header">
-    <h1>&#128140; Email Templates &#8212; POTENTIAL &amp; NEW Accounts</h1>
-    <p>SHI &#215; Canva Spring 2026 Blitz &nbsp;&#183;&nbsp; Lead with Canva Business for SMB</p>
+    <h1>&#128640; Email Templates &#8212; POTENTIAL &amp; NEW Accounts</h1>
+    <p>SHI &#215; Canva Spring 2026 Blitz &nbsp;&#183;&nbsp; Low or zero usage &#8212; educate first, earn the conversation</p>
 </div>
 
-<div class="biz-spotlight">
-    <h3>&#9889; Lead With: Canva Business Under $5k</h3>
-    <p>25 seats, currently just under $5,000 total. Credit card purchase, no procurement needed. Price increase already published online. No SSO/SCIM required &#8212; simplest path to a fast close for SMB.</p>
-</div>
-
-<div class="card">
-    <h2>&#128293; Template 1 &#8212; Cold Intro (Canva Business angle)</h2>
-    <div class="subtitle">Use for: First outreach to POTENTIAL or NEW accounts. Lead with the $5k urgency hook.</div>
-    <div class="subject-line"><span>Subject</span>Canva Business for <span class="fill">[Company]</span> &#8212; under $5k window closing</div>
-    <div class="email-body">Hi <span class="fill">[First Name]</span>,
-
-I&#8217;m reaching out from SHI because we&#8217;re running a Canva promotion for SMB customers this quarter and I wanted to flag something time-sensitive.
-
-Canva Business &#8212; 25 seats &#8212; is currently priced just under $5,000 total. For most IT teams, that&#8217;s a credit card purchase, no procurement process needed.
-
-The catch: a price increase is already published on Canva&#8217;s website. Once it takes effect, this goes above the $5k threshold &#8212; and the sign-off conversation changes.
-
-In case it&#8217;s helpful, Canva is an all-in-one platform that replaces presentations, documents, social content, and video editing &#8212; no design experience required. Most teams are up and running same day.
-
-Would it make sense to grab 20 minutes with Canva&#8217;s team to see if it fits? Happy to set that up.
-
-<span class="fill">[Your Name]</span>
-<span class="fill">[Your Title]</span>, SHI
-<span class="fill">[Phone]</span> | <span class="fill">[Email]</span></div>
-    <div class="tip">Keep it short. The $5k hook does the work &#8212; don&#8217;t over-explain Canva in the first email.</div>
+<div class="strategy-bar">
+    <h3>Strategy for this tier</h3>
+    <p>These contacts haven&#8217;t adopted Canva yet. Your job with email is to earn a conversation &#8212; not close a deal. Lead with their operational pain, not product features. The goal of Email 1 is a reply or a booked call. Price urgency and &#8220;there&#8217;s going to be a price increase&#8221; messaging is irrelevant here &#8212; they&#8217;re not using the product. Focus on workflow efficiency and the cost of the status quo.</p>
 </div>
 
 <div class="card">
-    <h2>&#127775; Template 2 &#8212; Platform Focus</h2>
-    <div class="subtitle">Use for: Accounts where you want to lead with what Canva does rather than just pricing.</div>
-    <div class="subject-line"><span>Subject</span>One tool your team will actually use &#8212; from SHI</div>
-    <div class="email-body">Hi <span class="fill">[First Name]</span>,
-
-Quick one from your SHI rep &#8212; we&#8217;re running a Canva promotion for SMB customers this quarter and wanted to see if it&#8217;s a fit for <span class="fill">[Company]</span>.
-
-Canva is an all-in-one design and communication platform. It replaces PowerPoint, Adobe, social media design, video editing, and document creation &#8212; in one tool anyone on your team can use from day one, no training needed.
-
-We&#8217;re offering Canva Business (25 seats) at a price that&#8217;s currently just under $5,000 total &#8212; which most teams can approve on a credit card. Heads up: a price increase is already published online, so the window to lock this in is short.
-
-Worth a 20-minute call to take a look?
-
-<span class="fill">[Your Name]</span>
-<span class="fill">[Your Title]</span>, SHI
-<span class="fill">[Phone]</span> | <span class="fill">[Email]</span></div>
+    <div class="warn">&#128683; <strong>What NOT to say to this tier:</strong> Don&#8217;t mention price increases. Don&#8217;t list features. Don&#8217;t open with &#8220;Canva is a design platform that&#8230;&#8221; &#8212; open with their problem instead.</div>
 </div>
 
+<!-- SEQUENCE OVERVIEW -->
 <div class="card">
-    <h2>&#128260; Template 3 &#8212; Follow-Up</h2>
-    <div class="subtitle">Use for: Second touch after no reply, or post-call follow-up.</div>
-    <div class="subject-line"><span>Subject</span>Following up &#8212; Canva / SHI</div>
-    <div class="email-body">Hi <span class="fill">[First Name]</span>,
+    <h2>&#128233; Recommended Sequence</h2>
+    <div class="subtitle">Send these in order. Stop when they respond.</div>
+    <div class="seq">
+        <span class="seq-step">Email 1 &#8212; Pain hook</span>
+        <span class="seq-arrow">&#8594;</span>
+        <span class="seq-step">Email 2 &#8212; Workflow efficiency</span>
+        <span class="seq-arrow">&#8594;</span>
+        <span class="seq-step grey">Email 3 &#8212; Enterprise proof</span>
+        <span class="seq-arrow">&#8594;</span>
+        <span class="seq-step grey">Email 4 &#8212; Breakup</span>
+    </div>
+    <ul>
+        <li>Space emails 3&#8211;4 business days apart</li>
+        <li>If they reply at any point &#8212; stop the sequence and respond directly</li>
+        <li>Always personalise <span class="fill">[highlighted fields]</span> before sending</li>
+    </ul>
+</div>
 
-Just following up on my earlier note about Canva. Wanted to make sure you had this on your radar before the pricing changes &#8212; 25 seats at under $5,000 is a window that&#8217;s closing soon.
+<!-- EMAIL 1 -->
+<div class="card">
+    <span class="label-tag tag-edu">Email 1 &#8212; Pain Hook</span>
+    <h2>Subject: How does your team create content today?</h2>
+    <div class="email-meta">
+        <strong>To:</strong> Marketing manager, ops lead, department head, or anyone who owns content creation<br>
+        <strong>Goal:</strong> Ask a question that makes them think. Get a reply.
+    </div>
+    <div class="email-body">Hi <span class="fill">[Name]</span>,
 
-If now&#8217;s not the right time, no worries at all. But if there&#8217;s any interest in a quick look, I&#8217;m happy to set up a short call with Canva&#8217;s team.
+Quick question &#8212; when someone on your team needs a presentation, a sales asset, or a marketing piece and your design team is busy, what usually happens?
+
+They wait. Or they make something that goes out off-brand. Or the designer gets pulled away from higher-value work.
+
+Most organisations have this problem and assume it&#8217;s just how it works. It doesn&#8217;t have to be.
+
+I&#8217;d love to share what some similar organisations are doing to fix this &#8212; would you be open to a 20-minute call this week?
 
 <span class="fill">[Your Name]</span>
 SHI | <span class="fill">[Phone]</span></div>
-    <div class="tip">One follow-up is plenty. Keep it light and leave the door open &#8212; don&#8217;t over-push.</div>
+    <div class="tip">&#128161; The question in the opening line does the work &#8212; it makes them picture the problem before you&#8217;ve described any solution. Don&#8217;t mention Canva by name in Email 1 if you can help it.</div>
+</div>
+
+<!-- EMAIL 2 -->
+<div class="card">
+    <span class="label-tag tag-edu">Email 2 &#8212; Workflow Efficiency</span>
+    <h2>Subject: What if every team could create on-brand content?</h2>
+    <div class="email-meta">
+        <strong>Send:</strong> 3&#8211;4 days after Email 1 (no reply)<br>
+        <strong>Goal:</strong> Make the value concrete with a specific use case
+    </div>
+    <div class="email-body">Hi <span class="fill">[Name]</span>,
+
+Following up on my note earlier this week.
+
+Here&#8217;s the core idea I wanted to share: <strong>what if your sales team could update their own decks? Your regional managers could create their own event materials? Your HR team could produce their own onboarding docs?</strong>
+
+All locked to your brand. No design review. No back-and-forth.
+
+That&#8217;s what Canva Enterprise is built to do &#8212; give every team in your org the ability to create professional, on-brand content without touching a designer. Your design team sets the guardrails once, then gets out of the bottleneck permanently.
+
+Most companies think of Canva as a design tool. Enterprise is an operations tool.
+
+Worth a quick conversation to see if it fits?
+
+<span class="fill">[Your Name]</span>
+SHI | <span class="fill">[Phone]</span></div>
+    <div class="tip">&#128161; &#8220;Enterprise is an operations tool&#8221; &#8212; this reframe works well because it separates the conversation from &#8220;another design subscription&#8221; and positions it alongside productivity and ops software.</div>
+</div>
+
+<!-- EMAIL 3 -->
+<div class="card">
+    <span class="label-tag tag-ent">Email 3 &#8212; Enterprise Proof</span>
+    <h2>Subject: 414% ROI &#8212; independent benchmarking for <span class="fill">[Company]</span></h2>
+    <div class="email-meta">
+        <strong>Send:</strong> 4 days after Email 2 (no reply)<br>
+        <strong>Goal:</strong> Give them the business case in numbers
+    </div>
+    <div class="email-body email-body-ent">Hi <span class="fill">[Name]</span>,
+
+One more thing worth sharing before I close the loop.
+
+Forrester independently benchmarked Canva Enterprise customers and found:
+
+&#8226; <strong>414% ROI</strong>
+&#8226; <strong>Payback in under 6 months</strong>
+&#8226; Time savings across design, marketing, and ops teams
+&#8226; Tool consolidation &#8212; organisations routinely retire 2&#8211;3 existing subscriptions
+
+That&#8217;s not a vendor claim &#8212; it&#8217;s an independent audit of real organisations.
+
+If there&#8217;s any chance this is relevant for <span class="fill">[Company]</span>, it&#8217;s worth 20 minutes. Canva&#8217;s team can scope a proposal based on your team size and use case.
+
+Would that be worth exploring?
+
+<span class="fill">[Your Name]</span>
+SHI | <span class="fill">[Phone]</span></div>
+    <div class="tip">&#128161; Leading with &#8220;independent benchmarking&#8221; gives the Forrester stat more weight than leading with the number alone. Specificity builds credibility.</div>
+</div>
+
+<!-- EMAIL 4 -->
+<div class="card">
+    <span class="label-tag tag-break">Email 4 &#8212; Breakup</span>
+    <h2>Subject: Closing the loop, <span class="fill">[Name]</span></h2>
+    <div class="email-meta">
+        <strong>Send:</strong> 4&#8211;5 days after Email 3 (no reply)<br>
+        <strong>Goal:</strong> Get a yes, no, or &#8220;not yet&#8221; &#8212; all three are useful
+    </div>
+    <div class="email-body">Hi <span class="fill">[Name]</span>,
+
+I&#8217;ve reached out a few times about how other organisations are fixing their content creation bottlenecks &#8212; want to close the loop.
+
+If it&#8217;s not the right time, completely fine &#8212; just say the word and I&#8217;ll check back in later. If you&#8217;re curious at all, I can keep it to 15 minutes.
+
+Either way, happy to hear from you.
+
+<span class="fill">[Your Name]</span>
+SHI | <span class="fill">[Phone]</span></div>
+    <div class="tip">&#128161; Short, low pressure. The explicit &#8220;just say the word&#8221; permission to decline almost always gets a response &#8212; even if it&#8217;s just a &#8220;not right now&#8221;, which is a useful data point.</div>
 </div>
 
 </div>

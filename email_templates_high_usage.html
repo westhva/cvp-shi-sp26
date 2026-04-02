@@ -11,97 +11,163 @@ body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif
 .header { background:linear-gradient(135deg,#00c6ff 0%,#0072ff 100%); color:white; border-radius:16px; padding:28px 32px; margin-bottom:20px; }
 .header h1 { font-size:1.5em; font-weight:800; margin-bottom:4px; }
 .header p { opacity:0.9; font-size:0.95em; }
-.biz-spotlight { background:linear-gradient(135deg,#1a1a2e 0%,#0f3460 100%); color:white; border-radius:14px; padding:22px 28px; margin-bottom:20px; border-left:5px solid #f39c12; }
-.biz-spotlight h3 { color:#f39c12; font-size:1.05em; margin-bottom:8px; }
-.biz-spotlight p { font-size:0.9em; line-height:1.6; color:rgba(255,255,255,0.9); }
+.strategy-bar { background:#1e293b; color:white; border-radius:14px; padding:18px 24px; margin-bottom:20px; border-left:5px solid #0072ff; }
+.strategy-bar h3 { font-size:0.95em; color:#7dd3fc; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.5px; }
+.strategy-bar p { font-size:0.9em; line-height:1.6; color:rgba(255,255,255,0.88); }
 .card { background:white; border-radius:14px; padding:22px 28px; margin-bottom:16px; box-shadow:0 3px 12px rgba(0,0,0,0.07); }
 .card h2 { font-size:1.05em; font-weight:700; margin-bottom:6px; }
-.card .subtitle { font-size:0.82em; color:#888; margin-bottom:16px; }
-.subject-line { background:#f1f5f9; border-radius:8px; padding:10px 14px; font-size:0.88em; margin-bottom:14px; }
-.subject-line span { font-weight:700; color:#555; font-size:0.8em; text-transform:uppercase; letter-spacing:0.5px; display:block; margin-bottom:3px; }
-.email-body { background:#f8fafc; border:1.5px solid #e2e8f0; border-radius:10px; padding:18px 20px; font-size:0.88em; line-height:1.75; color:#2d3748; white-space:pre-wrap; }
+.card .subtitle { font-size:0.85em; color:#888; margin-bottom:16px; }
+.card p, .card li { font-size:0.92em; line-height:1.65; color:#333; }
+.card ul { padding-left:18px; }
+.card li { margin-bottom:5px; }
+.email-meta { background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:10px 14px; margin-bottom:12px; font-size:0.85em; color:#555; }
+.email-meta strong { color:#222; }
+.email-body { background:#eff6ff; border:2px solid #93c5fd; border-radius:10px; padding:18px 20px; font-size:0.9em; line-height:1.8; color:#1e3a5f; white-space:pre-wrap; }
+.email-body-ent { background:#f0fdf4; border-color:#86efac; color:#14532d; }
 .fill { background:#dbeafe; padding:1px 5px; border-radius:4px; font-weight:600; color:#1e40af; }
-.tip { background:#fffbeb; border-left:4px solid #fcd34d; border-radius:0 8px 8px 0; padding:10px 14px; font-size:0.82em; color:#78350f; margin-top:12px; }
+.fill-ent { background:#dcfce7; color:#14532d; }
+.tip { background:#fffbeb; border-left:4px solid #fcd34d; border-radius:0 8px 8px 0; padding:10px 14px; font-size:0.85em; color:#78350f; margin-top:12px; }
+.seq { display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap; }
+.seq-step { background:#0072ff; color:white; border-radius:8px; padding:5px 12px; font-size:0.78em; font-weight:700; }
+.seq-step.grey { background:#94a3b8; }
+.seq-arrow { color:#94a3b8; align-self:center; font-size:1em; }
+.label-tag { display:inline-block; font-size:0.72em; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; border-radius:4px; padding:2px 7px; margin-bottom:10px; }
+.tag-biz { background:#fef9c3; color:#92400e; }
+.tag-ent { background:#dcfce7; color:#166534; }
+.tag-follow { background:#f3e8ff; color:#6b21a8; }
 </style>
 </head>
 <body>
 <div class="container">
 
 <div class="header">
-    <h1>&#128140; Email Templates &#8212; HOT &amp; WARM Accounts</h1>
-    <p>SHI &#215; Canva Spring 2026 Blitz &nbsp;&#183;&nbsp; These teams are already using Canva</p>
+    <h1>&#128293; Email Templates &#8212; HOT &amp; WARM Accounts</h1>
+    <p>SHI &#215; Canva Spring 2026 Blitz &nbsp;&#183;&nbsp; Already using Canva &#8212; formalise shadow IT, upgrade the plan</p>
 </div>
 
-<div class="biz-spotlight">
-    <h3>&#9889; Backup Angle: Canva Business for Smaller Teams</h3>
-    <p>If Enterprise feels like too big a conversation, Canva Business (25 seats, under $5k) is a faster path. Credit card, no procurement, no SSO/SCIM. Price increase already published. Good for smaller HOT/WARM accounts or as a stepping-stone conversation.</p>
+<div class="strategy-bar">
+    <h3>Strategy for this tier</h3>
+    <p>These contacts have existing Canva usage &#8212; the door is already open. Don&#8217;t pitch the product; pitch the upgrade. Lead with Canva Business to consolidate shadow IT quickly. If you&#8217;ve had a call and they&#8217;re talking about brand or workflows, shift to Enterprise. Keep emails short &#8212; one clear ask per email.</p>
 </div>
 
+<!-- SEQUENCE OVERVIEW -->
 <div class="card">
-    <h2>&#128293; Template 1 &#8212; HOT Accounts (10+ paid seats)</h2>
-    <div class="subtitle">Use for: Accounts with existing paid Canva seats. Goal is moving billing through SHI and formalising the agreement.</div>
-    <div class="subject-line"><span>Subject</span>Your team&#8217;s Canva seats &#8212; moving billing through SHI</div>
-    <div class="email-body">Hi <span class="fill">[First Name]</span>,
-
-I&#8217;m your SHI rep &#8212; reaching out because I can see your organisation already has paid Canva seats, and I wanted to start a conversation about formalising that.
-
-Right now those seats are likely individual subscriptions outside your normal procurement flow. Moving them through SHI gives you:
-
-&#8226; Consolidated invoicing and POs under one agreement
-&#8226; SSO, SCIM provisioning, and admin controls
-&#8226; Brand kit management and approval workflows
-&#8226; SOC 2 compliance and enterprise-grade security
-&#8226; Visibility and control across the whole org
-
-In most cases the per-seat cost stays similar or comes down on a formal agreement. And right now there&#8217;s a pricing window worth acting on before Canva&#8217;s published increase takes effect.
-
-Worth 20 minutes with Canva&#8217;s team to see what a formal agreement would look like?
-
-<span class="fill">[Your Name]</span>
-<span class="fill">[Your Title]</span>, SHI
-<span class="fill">[Phone]</span> | <span class="fill">[Email]</span></div>
-    <div class="tip">Mention the specific number of paid seats if you know it &#8212; &#8220;I can see you have X paid seats&#8221; makes this feel personal, not generic.</div>
+    <h2>&#128233; Recommended Sequence</h2>
+    <div class="subtitle">Send these in order. Stop when they respond.</div>
+    <div class="seq">
+        <span class="seq-step">Email 1 &#8212; Shadow IT opener</span>
+        <span class="seq-arrow">&#8594;</span>
+        <span class="seq-step">Email 2 &#8212; Business close</span>
+        <span class="seq-arrow">&#8594;</span>
+        <span class="seq-step grey">Email 3 &#8212; Enterprise pivot (if signals)</span>
+        <span class="seq-arrow">&#8594;</span>
+        <span class="seq-step grey">Email 4 &#8212; Breakup</span>
+    </div>
+    <ul>
+        <li>Space emails 3&#8211;4 business days apart</li>
+        <li>If they reply at any point &#8212; stop the sequence and respond directly</li>
+        <li>Always personalise <span class="fill">[highlighted fields]</span> before sending</li>
+    </ul>
 </div>
 
+<!-- EMAIL 1 -->
 <div class="card">
-    <h2>&#127754; Template 2 &#8212; WARM Accounts (high free usage)</h2>
-    <div class="subtitle">Use for: Accounts with lots of free Canva usage. Goal is converting them to paid.</div>
-    <div class="subject-line"><span>Subject</span>Your team is already using Canva &#8212; here&#8217;s what they&#8217;re missing</div>
-    <div class="email-body">Hi <span class="fill">[First Name]</span>,
+    <span class="label-tag tag-biz">Email 1 &#8212; Shadow IT Opener</span>
+    <h2>Subject: <span class="fill">[Name]</span> &#8212; your team&#8217;s Canva usage</h2>
+    <div class="email-meta">
+        <strong>To:</strong> IT manager, procurement lead, or software spend owner<br>
+        <strong>Goal:</strong> Surface the shadow IT problem and position Business as the easy fix
+    </div>
+    <div class="email-body">Hi <span class="fill">[Name]</span>,
 
-I&#8217;m your SHI rep. I noticed your team has been quite active on Canva&#8217;s free tier, and wanted to flag what a paid agreement could unlock.
+I&#8217;m reaching out because I can see your organisation already has people using Canva &#8212; and I wanted to flag something before it becomes a headache.
 
-Right now your team is likely hitting free-tier limits: restricted templates, no brand controls, no admin visibility. The paid tier removes all of that:
+When teams adopt Canva on their own, it typically ends up across personal credit cards or scattered expense claims. It works until it doesn&#8217;t &#8212; usually when someone leaves, an account lapses, or finance asks questions.
 
-&#8226; Premium templates and content library
-&#8226; Brand kits &#8212; everyone works from the same approved assets
-&#8226; Background remover, video editing, AI tools
-&#8226; Admin dashboard and approval workflows
-&#8226; SSO and SCIM provisioning
+The quickest fix is <strong>Canva Business</strong> &#8212; 25 seats, consolidated under a single SHI invoice, and approved on a card same day. No procurement, no drawn-out evaluation.
 
-The other thing worth knowing: Canva has published a price increase online. The window to formalise at the current rate is short.
-
-Happy to set up a quick call with Canva&#8217;s team to walk through options. Does that make sense?
-
-<span class="fill">[Your Name]</span>
-<span class="fill">[Your Title]</span>, SHI
-<span class="fill">[Phone]</span> | <span class="fill">[Email]</span></div>
-    <div class="tip">If this is a smaller team, add a line about Canva Business: &#8220;For smaller teams, Canva Business (25 seats) is currently under $5k total &#8212; credit card, no procurement needed.&#8221;</div>
-</div>
-
-<div class="card">
-    <h2>&#128260; Template 3 &#8212; Follow-Up</h2>
-    <div class="subtitle">Use for: Second touch after no reply from either HOT or WARM outreach.</div>
-    <div class="subject-line"><span>Subject</span>Re: Canva &#8212; quick follow-up</div>
-    <div class="email-body">Hi <span class="fill">[First Name]</span>,
-
-Just following up on my earlier note. Wanted to make sure you had this on your radar before Canva&#8217;s pricing changes &#8212; the window to formalise at the current rate is getting short.
-
-If now&#8217;s not the right moment, no worries at all. Just let me know and I&#8217;ll check back in next quarter.
+Worth a quick conversation this week?
 
 <span class="fill">[Your Name]</span>
 SHI | <span class="fill">[Phone]</span></div>
-    <div class="tip">Short is better for follow-ups. If they haven&#8217;t replied to a detailed email, a shorter nudge works better than another long one.</div>
+    <div class="tip">&#128161; Short and specific. &#8220;I can see your org already has people using Canva&#8221; is more credible than a generic pitch &#8212; it signals you&#8217;ve done your homework.</div>
+</div>
+
+<!-- EMAIL 2 -->
+<div class="card">
+    <span class="label-tag tag-biz">Email 2 &#8212; Business Close</span>
+    <h2>Subject: Getting your Canva spend under control (3 days)</h2>
+    <div class="email-meta">
+        <strong>Send:</strong> 3&#8211;4 days after Email 1 (no reply)<br>
+        <strong>Goal:</strong> Give them the numbers and a clear path to yes
+    </div>
+    <div class="email-body">Hi <span class="fill">[Name]</span>,
+
+Following up from my note earlier this week.
+
+Here&#8217;s what Canva Business looks like in practice:
+
+&#8226; 25 seats, annual agreement
+&#8226; Just under <strong>$5,000 total</strong> &#8212; credit card purchase, no procurement cycle
+&#8226; Brand controls, admin dashboard, premium content, proper billing
+&#8226; Can be set up within days of approval
+
+For most IT or procurement teams, this is a same-day decision. It gets the existing usage formalised and gives the team what they actually need &#8212; without waiting weeks.
+
+Happy to have a 15-minute call to walk through it. Any time work for you?
+
+<span class="fill">[Your Name]</span>
+SHI | <span class="fill">[Phone]</span></div>
+    <div class="tip">&#128161; The bullet list with the $5k number and &#8220;credit card, no procurement cycle&#8221; is doing the work here. Remove friction before they feel it.</div>
+</div>
+
+<!-- EMAIL 3 -->
+<div class="card">
+    <span class="label-tag tag-ent">Email 3 &#8212; Enterprise Pivot (if signals)</span>
+    <h2>Subject: Bigger picture for <span class="fill">[Company]</span></h2>
+    <div class="email-meta">
+        <strong>Send:</strong> After a call where they mentioned multiple teams, brand consistency, or IT governance<br>
+        <strong>Goal:</strong> Reframe from Business to Enterprise based on what you heard
+    </div>
+    <div class="email-body email-body-ent">Hi <span class="fill">[Name]</span>,
+
+Good to speak earlier. Based on what you described &#8212; <span class="fill">[their pain in their words, e.g. &#8220;multiple teams creating content with no brand oversight&#8221;]</span> &#8212; I think what you actually need is Canva Enterprise rather than Business.
+
+Enterprise adds the layer you&#8217;d be missing on Business:
+
+&#8226; <strong>Brand kit governance</strong> &#8212; lock down templates, fonts, and logos org-wide
+&#8226; <strong>SSO and SCIM</strong> &#8212; user provisioning through your existing identity provider
+&#8226; <strong>Admin dashboards and approval workflows</strong>
+&#8226; <strong>SOC 2 compliance, audit logs, Canva Shield AI indemnity</strong>
+
+Forrester independently benchmarked Enterprise customers: <strong>414% ROI</strong>, payback in under 6 months.
+
+Canva&#8217;s team can put together a scoped proposal for your org size and requirements &#8212; usually within a week. Worth a 20-minute call with them?
+
+<span class="fill">[Your Name]</span>
+SHI | <span class="fill">[Phone]</span></div>
+    <div class="tip">&#128161; Echo their exact words back in the opening line &#8212; &#8220;multiple teams creating content with no brand oversight&#8221; will resonate more than anything you can write yourself.</div>
+</div>
+
+<!-- EMAIL 4 -->
+<div class="card">
+    <span class="label-tag tag-follow">Email 4 &#8212; Breakup</span>
+    <h2>Subject: Closing the loop, <span class="fill">[Name]</span></h2>
+    <div class="email-meta">
+        <strong>Send:</strong> 4&#8211;5 days after Email 2 or 3 (no reply)<br>
+        <strong>Goal:</strong> Get a yes, a no, or a &#8220;not yet&#8221; &#8212; all three are useful
+    </div>
+    <div class="email-body">Hi <span class="fill">[Name]</span>,
+
+I&#8217;ve sent a couple of notes about consolidating your team&#8217;s Canva usage through SHI &#8212; want to close the loop.
+
+If the timing isn&#8217;t right, no problem at all &#8212; just let me know and I&#8217;ll check back in next quarter. If you&#8217;re open to a quick conversation, I can make it 15 minutes max.
+
+Either way, happy to hear back.
+
+<span class="fill">[Your Name]</span>
+SHI | <span class="fill">[Phone]</span></div>
+    <div class="tip">&#128161; Giving explicit permission to say no almost always gets a response. &#8220;Check back next quarter&#8221; keeps the door open without pressure.</div>
 </div>
 
 </div>

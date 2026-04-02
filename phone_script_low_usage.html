@@ -8,57 +8,64 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:#f4f6f8; padding:24px 16px; color:#222; }
 .container { max-width:740px; margin:0 auto; }
-.header { background:linear-gradient(135deg,#11998e 0%,#38ef7d 100%); color:white; border-radius:16px; padding:28px 32px; margin-bottom:20px; }
+.header { background:linear-gradient(135deg,#7c3aed 0%,#4f46e5 100%); color:white; border-radius:16px; padding:28px 32px; margin-bottom:20px; }
 .header h1 { font-size:1.5em; font-weight:800; margin-bottom:4px; }
 .header p { opacity:0.9; font-size:0.95em; }
-.biz-spotlight { background:linear-gradient(135deg,#1a1a2e 0%,#0f3460 100%); color:white; border-radius:14px; padding:22px 28px; margin-bottom:20px; border-left:5px solid #f39c12; }
-.biz-spotlight h3 { color:#f39c12; font-size:1.05em; margin-bottom:10px; }
-.biz-spotlight p { font-size:0.9em; line-height:1.65; color:rgba(255,255,255,0.9); margin-bottom:6px; }
-.biz-spotlight .pills { display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
-.pill { background:rgba(243,156,18,0.2); border:1px solid rgba(243,156,18,0.5); color:#f39c12; padding:4px 10px; border-radius:20px; font-size:0.78em; font-weight:600; }
+.strategy-bar { background:#1e293b; color:white; border-radius:14px; padding:18px 24px; margin-bottom:20px; border-left:5px solid #7c3aed; }
+.strategy-bar h3 { font-size:0.95em; color:#c4b5fd; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.5px; }
+.strategy-bar p { font-size:0.9em; line-height:1.6; color:rgba(255,255,255,0.88); }
+.path { display:flex; align-items:center; gap:10px; margin-top:12px; flex-wrap:wrap; }
+.path-step { background:rgba(255,255,255,0.12); border-radius:20px; padding:5px 14px; font-size:0.8em; font-weight:600; color:white; }
+.path-arrow { color:rgba(255,255,255,0.4); font-size:1.1em; }
 .card { background:white; border-radius:14px; padding:22px 28px; margin-bottom:16px; box-shadow:0 3px 12px rgba(0,0,0,0.07); }
 .card h2 { font-size:1.05em; font-weight:700; margin-bottom:14px; }
 .card p, .card li { font-size:0.92em; line-height:1.65; color:#333; }
-.card ul { padding-left:18px; }
+.card ul, .card ol { padding-left:18px; }
 .card li { margin-bottom:6px; }
-.script-box { background:#f0fdf4; border:2px solid #86efac; border-radius:10px; padding:16px 18px; margin:10px 0; font-size:0.9em; line-height:1.7; color:#14532d; }
-.script-box .label { font-size:0.75em; font-weight:700; text-transform:uppercase; letter-spacing:0.6px; color:#16a34a; margin-bottom:6px; display:block; }
-.script-biz { background:#fffbeb; border-color:#fcd34d; color:#78350f; }
-.script-biz .label { color:#d97706; }
-.fill { background:#dcfce7; padding:1px 5px; border-radius:4px; font-weight:600; color:#15803d; }
+.script-box { background:#eff6ff; border:2px solid #93c5fd; border-radius:10px; padding:16px 18px; margin:10px 0; font-size:0.9em; line-height:1.75; color:#1e3a5f; }
+.script-box .label { font-size:0.75em; font-weight:700; text-transform:uppercase; letter-spacing:0.6px; color:#1d4ed8; margin-bottom:6px; display:block; }
+.script-ent { background:#f0fdf4; border-color:#86efac; color:#14532d; }
+.script-ent .label { color:#16a34a; }
+.fill { background:#dbeafe; padding:1px 5px; border-radius:4px; font-weight:600; color:#1e40af; }
+.discovery-box { background:#f8f0ff; border:2px solid #d8b4fe; border-radius:10px; padding:16px 18px; margin:10px 0; }
+.discovery-box .label { font-size:0.75em; font-weight:700; text-transform:uppercase; letter-spacing:0.6px; color:#7c3aed; margin-bottom:8px; display:block; }
+.discovery-box li { font-size:0.88em; color:#3b0764; margin-bottom:5px; }
 .objection { background:#fef2f2; border-left:4px solid #f87171; border-radius:0 8px 8px 0; padding:12px 16px; margin-bottom:10px; }
 .objection .q { font-weight:700; color:#991b1b; font-size:0.88em; margin-bottom:5px; }
 .objection .a { font-size:0.88em; color:#333; line-height:1.6; }
-.tip { background:#eff6ff; border-left:4px solid #3b82f6; border-radius:0 8px 8px 0; padding:10px 14px; font-size:0.85em; color:#1e40af; margin-top:10px; }
+.tip { background:#fffbeb; border-left:4px solid #fcd34d; border-radius:0 8px 8px 0; padding:10px 14px; font-size:0.85em; color:#78350f; margin-top:10px; }
+.stat { display:inline-block; background:#7c3aed; color:white; border-radius:8px; padding:4px 10px; font-weight:700; font-size:0.88em; margin:2px; }
+.signal { background:#fefce8; border:1px solid #fde047; border-radius:6px; padding:2px 8px; font-size:0.82em; font-weight:600; color:#854d0e; display:inline-block; margin:2px; }
 </style>
 </head>
 <body>
 <div class="container">
 
 <div class="header">
-    <h1>&#128222; Phone Script &#8212; POTENTIAL &amp; NEW Accounts</h1>
-    <p>SHI &#215; Canva Spring 2026 Blitz &nbsp;&#183;&nbsp; SMB focus: lead with Canva Business</p>
+    <h1>&#128640; Phone Script &#8212; POTENTIAL &amp; NEW Accounts</h1>
+    <p>SHI &#215; Canva Spring 2026 Blitz &nbsp;&#183;&nbsp; Low or zero Canva usage &#8212; educate first, sell second</p>
 </div>
 
-<div class="biz-spotlight">
-    <h3>&#9889; Your #1 Angle for SMB: Canva Business</h3>
-    <p><strong>25 seats at current Business pricing = just under $5,000 total.</strong> Most IT managers can approve this on a credit card today &#8212; no procurement, no waiting.</p>
-    <p>A price increase is already published online and expected to push this above $5k. The window is now. No SSO or SCIM required &#8212; they&#8217;re live in minutes.</p>
-    <div class="pills">
-        <span class="pill">&#128179; &lt;$5k credit card buy</span>
-        <span class="pill">&#9650; Price going up soon</span>
-        <span class="pill">&#9889; No SSO/SCIM needed</span>
-        <span class="pill">&#127919; Fast close</span>
+<div class="strategy-bar">
+    <h3>Strategy for this tier</h3>
+    <p>These accounts don&#8217;t have a Canva footprint yet. Don&#8217;t lead with product features or price. Lead with their problem: how does their team create content today, and how much is that costing them? When they describe the pain &#8212; designers as bottlenecks, off-brand content, slow turnaround &#8212; that&#8217;s your opening. Companies without existing Canva usage almost always end up on Enterprise once they understand the workflow play.</p>
+    <div class="path">
+        <span class="path-step">&#128269; Discover the pain</span>
+        <span class="path-arrow">&#8594;</span>
+        <span class="path-step">&#127775; Connect to workflows</span>
+        <span class="path-arrow">&#8594;</span>
+        <span class="path-step">&#128200; Enterprise CTA</span>
     </div>
 </div>
 
 <div class="card">
     <h2>&#128196; Before You Call</h2>
     <ul>
-        <li>Look up the company briefly &#8212; industry, size, what they do</li>
-        <li>Aim for Marketing, Operations, HR, or IT</li>
-        <li>These accounts have little or no Canva usage &#8212; this is a discovery and education call</li>
-        <li>Goal: get a meeting or a &#8220;send me more info&#8221; &#8212; not a close on the first call</li>
+        <li>Low YAU = they may have tried Canva and not adopted it, or never evaluated it at all</li>
+        <li>Don&#8217;t assume disinterest &#8212; assume unawareness. Most people still think Canva is a free design tool for social posts.</li>
+        <li>Target: marketing manager, ops lead, department head, or anyone who owns content creation workflows</li>
+        <li>Your job on this call is to <strong>ask great questions and listen</strong> &#8212; not pitch</li>
+        <li><strong>DO NOT</strong> mention price increases or urgency &#8212; irrelevant to a non-user and will kill the call</li>
     </ul>
 </div>
 
@@ -66,74 +73,107 @@ body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif
     <h2>&#128222; Opening</h2>
     <div class="script-box">
         <span class="label">Say this</span>
-        &#8220;Hey <span class="fill">[Name]</span>, my name&#8217;s <span class="fill">[Your Name]</span> from SHI. I&#8217;m reaching out to a handful of our SMB customers about a Canva promotion we&#8217;re running &#8212; wanted to see if it might be a fit for your team. Do you have 60 seconds?&#8221;
+        &#8220;Hey <span class="fill">[Name]</span>, this is <span class="fill">[Your Name]</span> from SHI. Quick question &#8212; how does your team currently create content? Things like presentations, social posts, marketing materials, internal comms?&#8221;
     </div>
-    <div class="tip">If they ask &#8220;what&#8217;s Canva?&#8221; &#8212; great! Zero competition. Go straight to the Business pitch below.</div>
-</div>
-
-<div class="card">
-    <h2>&#9889; Canva Business Pitch &#8212; Lead With This</h2>
-    <div class="script-box script-biz">
-        <span class="label">&#128293; Main pitch</span>
-        &#8220;We&#8217;re working with Canva on a limited-time offer for SMB customers. Canva Business &#8212; 25 seats &#8212; is currently priced just under $5,000 total. For most IT teams, that&#8217;s a credit card purchase. No procurement process, no waiting.<br><br>
-        The reason I&#8217;m calling now is that Canva has already published a price increase online. Once that kicks in, this goes above the $5k mark &#8212; and the conversation looks different. So the window to lock in at this price is short.<br><br>
-        It replaces presentations, documents, social content, video editing &#8212; all in one tool anyone on the team can use from day one, no design experience needed. Would it make sense to grab a quick 20-minute call with Canva&#8217;s team to see if it fits?&#8221;
-    </div>
-    <div class="tip">If they need SSO or SCIM, pivot to Enterprise. But Business is the easy first conversation for SMB &#8212; simple, fast, under the threshold.</div>
-</div>
-
-<div class="card">
-    <h2>&#127775; What Canva Replaces (if they want more detail)</h2>
+    <div class="tip">&#128161; Starting with a question, not a pitch, changes the whole dynamic. Let them talk. You&#8217;re diagnosing, not presenting. Whatever they say next tells you everything.</div>
     <div class="script-box">
-        <span class="label">Platform overview</span>
-        &#8220;Think about every time your team makes a presentation, a document, a social post, a video, or a flyer. Right now that probably means jumping between PowerPoint, Google Slides, Adobe, and whatever else people have installed on their machines.<br><br>
-        Canva puts all of that in one platform &#8212; with brand controls so everything looks consistent &#8212; and people are creating in minutes, not days.&#8221;
+        <span class="label">If they say "we have a design team"</span>
+        &#8220;Got it &#8212; and when other teams need something created quickly, do they wait for the design team, or do they try to make it themselves?&#8221;
     </div>
+    <div class="script-box">
+        <span class="label">If they say "we use PowerPoint / Google Slides / Adobe"</span>
+        &#8220;Totally &#8212; those are great for certain things. I&#8217;m curious though: when someone outside the creative team needs to produce something on-brand &#8212; a sales deck, a regional flyer, a quick social post &#8212; how does that typically go?&#8221;
+    </div>
+</div>
+
+<div class="card">
+    <h2>&#128269; Discovery &#8212; Find the Real Pain</h2>
+    <p style="margin-bottom:12px;font-size:0.9em;color:#555;"><em>Your goal is to get them describing a workflow problem in their own words. These are the signals you&#8217;re listening for:</em></p>
+    <div style="margin-bottom:14px;">
+        <span class="signal">Designer is a bottleneck</span>
+        <span class="signal">Off-brand content going out</span>
+        <span class="signal">Slow turnaround times</span>
+        <span class="signal">Too many tools</span>
+        <span class="signal">Regional teams doing their own thing</span>
+        <span class="signal">Non-designers trying to create</span>
+    </div>
+
+    <div class="discovery-box">
+        <span class="label">&#128269; SPICED discovery questions</span>
+        <ul>
+            <li><strong>Situation:</strong> How many people in your org regularly need to produce or update content &#8212; not just the design team?</li>
+            <li><strong>Pain:</strong> What&#8217;s the biggest friction point when someone outside of design needs something created quickly?</li>
+            <li><strong>Impact:</strong> If every team could produce professional, on-brand content without going through a bottleneck &#8212; what would that change for you?</li>
+            <li><strong>Critical Event:</strong> Is there an upcoming campaign, launch, or initiative where faster content creation would matter most?</li>
+            <li><strong>Decision:</strong> If a solution addressed those problems, what would the evaluation process look like on your end?</li>
+        </ul>
+    </div>
+    <div class="tip">&#128161; You don&#8217;t need to ask all five. Get them talking, pick the ones that fit the conversation. The goal is to have <em>them</em> articulate the problem &#8212; not for you to tell it to them.</div>
+</div>
+
+<div class="card">
+    <h2>&#127881; Connecting the Pain to Canva Enterprise</h2>
+    <p style="margin-bottom:12px;font-size:0.9em;color:#555;"><em>Once you have their pain in their own words, bridge to the platform. Don&#8217;t list features &#8212; mirror their language back.</em></p>
+    <div class="script-box script-ent">
+        <span class="label">&#128200; The workflow reframe</span>
+        &#8220;What you&#8217;re describing is actually exactly where Canva Enterprise plays. Most people think of Canva as a design tool &#8212; and it is &#8212; but for organisations, the bigger value is what it does to your workflows.<br><br>
+        It gives every team &#8212; marketing, sales, ops, HR, regional offices &#8212; the ability to create professional, on-brand content without touching a designer. Your brand kit locks down the templates, fonts, and logos so nothing goes out off-brand. Your design team sets the guardrails once, and then gets out of the bottleneck permanently.<br><br>
+        Imagine your sales team updating their own decks. Your regional managers creating their own event flyers. Your HR team producing their own onboarding docs &#8212; all locked to your brand. That&#8217;s what we&#8217;re talking about.&#8221;
+    </div>
+    <div class="script-box script-ent">
+        <span class="label">&#128200; The consolidation angle (if they use multiple tools)</span>
+        &#8220;One thing that surprises most people: Canva Enterprise replaces a lot of what they&#8217;re already paying for. Presentations, social content, video, docs, whiteboards, PDFs &#8212; it&#8217;s one platform. Most organisations find they can retire 2&#8211;3 other subscriptions once the team is fully onboarded.<br><br>
+        Forrester independently benchmarked this: organisations using Canva Enterprise saw <strong>414% ROI</strong> and got their investment back in under 6 months. That&#8217;s not a marketing claim &#8212; that&#8217;s an independent audit.&#8221;
+    </div>
+</div>
+
+<div class="card">
+    <h2>&#127775; Enterprise value &#8212; if they want to go deeper</h2>
+    <ul>
+        <li><strong>Brand Governance</strong> &#8212; Templates, fonts, logos locked globally. Every team creates on-brand without design review.</li>
+        <li><strong>Operational Efficiency</strong> &#8212; Any team creates professional content without bottlenecks. One platform replaces PowerPoint, Adobe, video tools, and docs.</li>
+        <li><strong>Security &amp; Compliance</strong> &#8212; SSO, SCIM provisioning, ISO 27001, SOC 2, audit logs, Canva Shield AI indemnity.</li>
+        <li><strong>Scalable Collaboration</strong> &#8212; Multi-team, multi-region. Distribute and manage branded content at scale.</li>
+    </ul>
+    <div class="tip">&#128200; Forrester TEI: <span class="stat">414% ROI</span> <span class="stat">payback &lt; 6 months</span>. Lead with this when they ask &#8220;how do we justify the cost?&#8221;</div>
 </div>
 
 <div class="card">
     <h2>&#128683; Handling Objections</h2>
-
     <div class="objection">
-        <div class="q">&#8220;We already have PowerPoint / Google Slides.&#8221;</div>
-        <div class="a">&#8220;Most of our customers do &#8212; and they keep using them. What Canva adds is a design layer on top: on-brand templates, social and video formats, and a platform everyone on the team can actually use without a designer. A lot of teams end up replacing 3 or 4 tools.&#8221;</div>
+        <div class="q">&#8220;We already have a design team &#8212; we don&#8217;t need this.&#8221;</div>
+        <div class="a">&#8220;Your design team is probably the best reason to get it. Right now they&#8217;re probably spending a lot of time on requests that don&#8217;t need their skill level &#8212; small edits, quick resizes, updating slide decks. Canva offloads that work to the people making the requests, so your design team can focus on the work that actually needs them.&#8221;</div>
     </div>
-
     <div class="objection">
-        <div class="q">&#8220;We&#8217;re not really a design-heavy company.&#8221;</div>
-        <div class="a">&#8220;That&#8217;s actually where Canva fits best &#8212; teams without dedicated designers. It&#8217;s built so anyone can make something professional-looking in minutes. Marketing, HR, operations, sales &#8212; all use it.&#8221;</div>
+        <div class="q">&#8220;We use Adobe / PowerPoint / Google Slides already.&#8221;</div>
+        <div class="a">&#8220;Those are great tools for specific people. The difference with Canva is that it&#8217;s built for everyone &#8212; not just the people who are trained on design software. The question isn&#8217;t whether your design team can use Adobe. It&#8217;s whether your sales team, your ops team, your regional managers can create on-brand content without going through a bottleneck. That&#8217;s the gap Canva fills.&#8221;</div>
     </div>
-
     <div class="objection">
-        <div class="q">&#8220;$5k still needs sign-off.&#8221;</div>
-        <div class="a">&#8220;Totally fair. This is one of the lowest-threshold software decisions out there &#8212; and the price goes up soon, so the timing works in your favour. Worth a quick conversation before the window closes?&#8221;</div>
+        <div class="q">&#8220;We don&#8217;t have budget for a new tool right now.&#8221;</div>
+        <div class="a">&#8220;That&#8217;s fair &#8212; timing matters. I&#8217;d just push back slightly: most orgs find that Canva Enterprise replaces tools they&#8217;re already paying for. If it can consolidate your presentation software, design subscriptions, and content tools under one contract, the net cost is often lower than what they&#8217;re spending today. Worth a 20-minute conversation just to run the numbers?&#8221;</div>
     </div>
-
     <div class="objection">
-        <div class="q">&#8220;We&#8217;re not looking at new software right now.&#8221;</div>
-        <div class="a">&#8220;I get it &#8212; timing isn&#8217;t always right. The main reason I&#8217;m calling now is the price point. Once it goes up, this conversation looks different. Even a 20-minute call before then could be worth it.&#8221;</div>
+        <div class="q">&#8220;We tried it before and the team didn&#8217;t adopt it.&#8221;</div>
+        <div class="a">&#8220;That&#8217;s the most common thing I hear, and it&#8217;s almost always the same reason &#8212; it was rolled out without templates set up, without brand kit, without a clear use case. Enterprise is a different product. Canva&#8217;s team sets up your brand kit, pre-builds your templates, and runs onboarding with your team. The organisations that see 400%+ ROI didn&#8217;t just hand over a licence &#8212; they had a proper rollout.&#8221;</div>
     </div>
-
     <div class="objection">
-        <div class="q">&#8220;Send me an email instead.&#8221;</div>
-        <div class="a">&#8220;Absolutely &#8212; what&#8217;s the best address? I&#8217;ll send something short with the current pricing and a link to book time directly with Canva&#8217;s team if it looks interesting.&#8221;</div>
+        <div class="q">&#8220;I&#8217;m not sure we have enough people to justify Enterprise.&#8221;</div>
+        <div class="a">&#8220;Enterprise starts at 30 seats &#8212; so it&#8217;s not just for large organisations. And the value isn&#8217;t about the number of users, it&#8217;s about the teams that benefit from having a structured, governed content platform. Happy to get Canva&#8217;s team to scope out what that looks like for your specific situation.&#8221;</div>
     </div>
 </div>
 
 <div class="card">
-    <h2>&#128203; Closing the Call</h2>
-    <div class="script-box">
-        <span class="label">Ask for the meeting</span>
-        &#8220;Based on what you&#8217;ve heard, does it make sense to grab 20 minutes with Canva&#8217;s team? They&#8217;ll show you exactly what it looks like for a team your size and answer any questions. No pressure &#8212; just a look.&#8221;
+    <h2>&#128203; Closing</h2>
+    <div class="script-box script-ent">
+        <span class="label">Enterprise close</span>
+        &#8220;Based on what you&#8217;ve described &#8212; <span class="fill">[echo their pain back]</span> &#8212; I think it&#8217;s worth a proper conversation with Canva&#8217;s team. They can put together a proposal based on your team structure and use case. Typically takes about 20 minutes on a scoping call, and you&#8217;d have a proposal within a week.<br><br>
+        What&#8217;s the best email to send you a calendar invite?&#8221;
     </div>
     <div class="script-box">
-        <span class="label">If yes</span>
-        &#8220;Perfect. I&#8217;ll send over a calendar link right now. What&#8217;s the best email?&#8221;
+        <span class="label">If they&#8217;re not ready to meet</span>
+        &#8220;No problem. Can I send you a quick summary of what we talked about &#8212; the workflow efficiency angle and the Forrester numbers? That way you have something to share internally if the conversation comes up. What&#8217;s your email?&#8221;
     </div>
-    <div class="script-box">
-        <span class="label">If not right now</span>
-        &#8220;No problem. I&#8217;ll drop you a note with the pricing &#8212; worth having on file before the increase. Thanks for your time, <span class="fill">[Name]</span>!&#8221;
-    </div>
+    <div class="tip">&#128161; Getting an email address on a &#8220;not ready&#8221; call is a win. It moves them from cold to warm and gives you a reason to follow up.</div>
 </div>
 
 </div>

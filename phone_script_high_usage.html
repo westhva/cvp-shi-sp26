@@ -11,27 +11,32 @@ body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif
 .header { background:linear-gradient(135deg,#00c6ff 0%,#0072ff 100%); color:white; border-radius:16px; padding:28px 32px; margin-bottom:20px; }
 .header h1 { font-size:1.5em; font-weight:800; margin-bottom:4px; }
 .header p { opacity:0.9; font-size:0.95em; }
-.biz-spotlight { background:linear-gradient(135deg,#1a1a2e 0%,#0f3460 100%); color:white; border-radius:14px; padding:22px 28px; margin-bottom:20px; border-left:5px solid #f39c12; }
-.biz-spotlight h3 { color:#f39c12; font-size:1.05em; margin-bottom:10px; }
-.biz-spotlight p { font-size:0.9em; line-height:1.65; color:rgba(255,255,255,0.9); margin-bottom:6px; }
-.biz-spotlight .pills { display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
-.pill { background:rgba(243,156,18,0.2); border:1px solid rgba(243,156,18,0.5); color:#f39c12; padding:4px 10px; border-radius:20px; font-size:0.78em; font-weight:600; }
+.strategy-bar { background:#1e293b; color:white; border-radius:14px; padding:18px 24px; margin-bottom:20px; border-left:5px solid #0072ff; }
+.strategy-bar h3 { font-size:0.95em; color:#7dd3fc; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.5px; }
+.strategy-bar p { font-size:0.9em; line-height:1.6; color:rgba(255,255,255,0.88); }
+.path { display:flex; align-items:center; gap:10px; margin-top:12px; flex-wrap:wrap; }
+.path-step { background:rgba(255,255,255,0.12); border-radius:20px; padding:5px 14px; font-size:0.8em; font-weight:600; color:white; }
+.path-arrow { color:rgba(255,255,255,0.4); font-size:1.1em; }
 .card { background:white; border-radius:14px; padding:22px 28px; margin-bottom:16px; box-shadow:0 3px 12px rgba(0,0,0,0.07); }
 .card h2 { font-size:1.05em; font-weight:700; margin-bottom:14px; }
 .card p, .card li { font-size:0.92em; line-height:1.65; color:#333; }
-.card ul { padding-left:18px; }
+.card ul, .card ol { padding-left:18px; }
 .card li { margin-bottom:6px; }
-.script-box { background:#eff6ff; border:2px solid #93c5fd; border-radius:10px; padding:16px 18px; margin:10px 0; font-size:0.9em; line-height:1.7; color:#1e3a5f; }
+.script-box { background:#eff6ff; border:2px solid #93c5fd; border-radius:10px; padding:16px 18px; margin:10px 0; font-size:0.9em; line-height:1.75; color:#1e3a5f; }
 .script-box .label { font-size:0.75em; font-weight:700; text-transform:uppercase; letter-spacing:0.6px; color:#1d4ed8; margin-bottom:6px; display:block; }
-.script-hot { background:#fff1f2; border-color:#fca5a5; color:#7f1d1d; }
-.script-hot .label { color:#dc2626; }
-.script-warm { background:#fffbeb; border-color:#fcd34d; color:#78350f; }
-.script-warm .label { color:#d97706; }
+.script-biz { background:#fefce8; border-color:#fde047; color:#713f12; }
+.script-biz .label { color:#ca8a04; }
+.script-ent { background:#f0fdf4; border-color:#86efac; color:#14532d; }
+.script-ent .label { color:#16a34a; }
 .fill { background:#dbeafe; padding:1px 5px; border-radius:4px; font-weight:600; color:#1e40af; }
+.discovery-box { background:#f8f0ff; border:2px solid #d8b4fe; border-radius:10px; padding:16px 18px; margin:10px 0; }
+.discovery-box .label { font-size:0.75em; font-weight:700; text-transform:uppercase; letter-spacing:0.6px; color:#7c3aed; margin-bottom:8px; display:block; }
+.discovery-box li { font-size:0.88em; color:#3b0764; margin-bottom:5px; }
 .objection { background:#fef2f2; border-left:4px solid #f87171; border-radius:0 8px 8px 0; padding:12px 16px; margin-bottom:10px; }
 .objection .q { font-weight:700; color:#991b1b; font-size:0.88em; margin-bottom:5px; }
 .objection .a { font-size:0.88em; color:#333; line-height:1.6; }
-.tip { background:#f0fdf4; border-left:4px solid #4ade80; border-radius:0 8px 8px 0; padding:10px 14px; font-size:0.85em; color:#14532d; margin-top:10px; }
+.tip { background:#fffbeb; border-left:4px solid #fcd34d; border-radius:0 8px 8px 0; padding:10px 14px; font-size:0.85em; color:#78350f; margin-top:10px; }
+.stat { display:inline-block; background:#0072ff; color:white; border-radius:8px; padding:4px 10px; font-weight:700; font-size:0.88em; margin:2px; }
 </style>
 </head>
 <body>
@@ -39,26 +44,28 @@ body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif
 
 <div class="header">
     <h1>&#128293; Phone Script &#8212; HOT &amp; WARM Accounts</h1>
-    <p>SHI &#215; Canva Spring 2026 Blitz &nbsp;&#183;&nbsp; These accounts already use Canva &#8212; move them to paid</p>
+    <p>SHI &#215; Canva Spring 2026 Blitz &nbsp;&#183;&nbsp; These teams are already using Canva &#8212; convert shadow IT</p>
 </div>
 
-<div class="biz-spotlight">
-    <h3>&#9889; Also Offer: Canva Business for Smaller Teams</h3>
-    <p>If the account is smaller or a manager wants a quick win: <strong>Canva Business (25 seats) is currently under $5,000 total</strong> &#8212; credit card purchase, no procurement needed. Price increase is already published online. Worth mentioning if Enterprise feels like too big a conversation right now.</p>
-    <div class="pills">
-        <span class="pill">&#128179; &lt;$5k instant buy</span>
-        <span class="pill">&#9650; Price increase coming</span>
-        <span class="pill">&#9889; Faster close</span>
+<div class="strategy-bar">
+    <h3>Strategy for this tier</h3>
+    <p>These accounts have existing Canva usage &#8212; HOT with paid seats, WARM with high free usage. Don&#8217;t sell Canva, sell the <em>upgrade</em>. Canva Business is the easiest first step: quick decision, low friction, gets it off personal credit cards. If the conversation opens into workflows and brand management, push for Enterprise.</p>
+    <div class="path">
+        <span class="path-step">Shadow IT exists</span>
+        <span class="path-arrow">&#8594;</span>
+        <span class="path-step">&#128179; Canva Business (fast close)</span>
+        <span class="path-arrow">&#8594;</span>
+        <span class="path-step">&#128200; Enterprise (if workflows open up)</span>
     </div>
 </div>
 
 <div class="card">
     <h2>&#128196; Before You Call</h2>
     <ul>
-        <li>Check YAU and paid seat count in the dashboard &#8212; these inform which script to use</li>
-        <li>HOT = 10+ paid seats already. WARM = high free usage. Both are warm calls &#8212; they know Canva</li>
-        <li>Try to reach an IT manager, procurement lead, or the team that manages software spend</li>
-        <li>Goal: get them to move billing through SHI or commit to a formal agreement</li>
+        <li>Check YAU and paid seat count in the dashboard &#8212; these tell you HOW engaged they are</li>
+        <li>HOT = already paying out of pocket. WARM = heavy free usage. Both are warm calls.</li>
+        <li>Target: IT manager, procurement lead, or whoever manages software spend</li>
+        <li>You have a built-in opener &#8212; their team is already using the product</li>
     </ul>
 </div>
 
@@ -66,76 +73,89 @@ body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif
     <h2>&#128222; Opening</h2>
     <div class="script-box">
         <span class="label">Say this</span>
-        &#8220;Hey <span class="fill">[Name]</span>, my name&#8217;s <span class="fill">[Your Name]</span> from SHI &#8212; I&#8217;m one of your account reps. I&#8217;m reaching out because I can see your organisation is already using Canva, and I wanted to talk about how we can formalise that through SHI and unlock some additional features. Is now an okay time?&#8221;
+        &#8220;Hey <span class="fill">[Name]</span>, this is <span class="fill">[Your Name]</span> from SHI. I&#8217;m your account rep, and I&#8217;m reaching out because I can see your organisation already has people actively using Canva &#8212; and I wanted to talk about the quickest way to formalise that through SHI before it becomes a problem. Do you have a couple of minutes?&#8221;
+    </div>
+    <div class="tip">&#8220;Before it becomes a problem&#8221; opens the shadow IT conversation naturally &#8212; uncategorised software spend is a real pain for IT and procurement.</div>
+</div>
+
+<div class="card">
+    <h2>&#128179; Lead: Canva Business (the easy win)</h2>
+    <div class="script-box script-biz">
+        <span class="label">&#9889; HOT accounts &#8212; already paying</span>
+        &#8220;Right now your team has paid Canva seats that are probably sitting outside your normal software spend &#8212; personal credit cards, expensed subscriptions. That&#8217;s common, and it&#8217;s easy to fix.<br><br>
+        The quickest path is Canva Business &#8212; 25 seats, currently priced just under $5,000 total. Most IT teams can approve that on a card same day, no procurement needed. It gets all those seats consolidated under one SHI invoice, with proper billing and visibility.<br><br>
+        We can have that sorted in days rather than weeks. Does that kind of quick win make sense?&#8221;
+    </div>
+    <div class="script-box script-biz">
+        <span class="label">&#127754; WARM accounts &#8212; heavy free usage</span>
+        &#8220;Your team is clearly getting value from Canva &#8212; which is great. The issue is they&#8217;re hitting the ceiling on what the free tier can do: no brand controls, no admin visibility, no premium content.<br><br>
+        The fastest way to unlock all of that is Canva Business &#8212; 25 seats for just under $5,000. Credit card purchase, no procurement needed, and your team gets premium features immediately.<br><br>
+        Does that sound like something worth a quick conversation?&#8221;
     </div>
 </div>
 
 <div class="card">
-    <h2>&#128293; HOT Accounts &#8212; 10+ Paid Seats</h2>
-    <div class="script-box script-hot">
-        <span class="label">&#128293; Use this script</span>
-        &#8220;I can see your team already has paid Canva seats &#8212; which is great. The reason I&#8217;m calling is that right now those are individual subscriptions sitting outside your normal procurement flow.<br><br>
-        Moving them through SHI gets you consolidated invoicing and POs, proper software asset management, and unlocks the Enterprise tier &#8212; which adds SSO, SCIM provisioning, brand kits, admin controls, and SOC 2 compliance.<br><br>
-        In most cases, the per-seat cost stays similar or comes down once you&#8217;re on a formal agreement. Would it make sense to get a quick call set up with Canva&#8217;s team to scope this out?&#8221;
+    <h2>&#128200; Pivot: Canva Enterprise (when the conversation opens)</h2>
+    <p style="margin-bottom:12px;font-size:0.9em;color:#555;"><em>Listen for these signals: &#8220;we have lots of teams&#8221;, &#8220;brand consistency is a problem&#8221;, &#8220;IT needs control&#8221;, &#8220;we use Adobe/other tools&#8221;. These are Enterprise conversations.</em></p>
+    <div class="script-box script-ent">
+        <span class="label">&#128200; Pivot to Enterprise</span>
+        &#8220;Actually, based on what you&#8217;re describing &#8212; multiple teams, brand consistency challenges, IT needing visibility &#8212; it sounds like what you might really need is Canva Enterprise rather than Business.<br><br>
+        Enterprise is built for organisations, not just individuals. It adds SSO and SCIM provisioning, brand kit controls that lock down templates and fonts org-wide, admin dashboards, approval workflows, and SOC 2 compliance.<br><br>
+        The way I&#8217;d think about it: Canva Business is great for a team. Enterprise is for an organisation that needs governance at scale. Which sounds more like your situation?&#8221;
     </div>
-    <div class="tip">If the team is small (&lt;50 users), you can also mention Canva Business as a faster option: under $5k for 25 seats, no SSO/SCIM needed, instant credit card purchase.</div>
+
+    <div class="discovery-box">
+        <span class="label">&#128269; SPICED discovery questions (Enterprise path)</span>
+        <ul>
+            <li><strong>Situation:</strong> How many teams are currently using Canva across your org?</li>
+            <li><strong>Pain:</strong> What challenges do you have with brand consistency or content quality today?</li>
+            <li><strong>Impact:</strong> If any team could create on-brand content without going through a designer &#8212; what would that save you?</li>
+            <li><strong>Critical Event:</strong> Any upcoming campaigns or launches where this would matter most?</li>
+            <li><strong>Decision:</strong> Beyond price, what matters most when evaluating a platform like this?</li>
+        </ul>
+    </div>
 </div>
 
 <div class="card">
-    <h2>&#127754; WARM Accounts &#8212; High Free Usage</h2>
-    <div class="script-box script-warm">
-        <span class="label">&#127754; Use this script</span>
-        &#8220;I can see your team has been active on Canva &#8212; a good chunk of your users are on the free tier right now. The reason I&#8217;m calling is that there&#8217;s a real gap between what they&#8217;re using and what they could be doing.<br><br>
-        The paid tier unlocks premium templates, brand kits, background remover, video editing, and admin controls &#8212; plus your content stays on-brand across the whole team. And right now there&#8217;s a good window to lock in pricing before an increase that&#8217;s already been published.<br><br>
-        Would it make sense to grab 20 minutes with Canva&#8217;s team to look at what a formal agreement would look like for your org?&#8221;
-    </div>
-    <div class="tip">Canva Business angle works well here too if they&#8217;re SMB-sized &#8212; simpler conversation, faster decision, under $5k.</div>
-</div>
-
-<div class="card">
-    <h2>&#127775; Key Value Props (if they want more)</h2>
+    <h2>&#127775; Enterprise value if they want to go deeper</h2>
     <ul>
-        <li><strong>Enterprise controls</strong> &#8212; SSO, SCIM, admin dashboard, brand management, approval workflows</li>
-        <li><strong>Tool consolidation</strong> &#8212; replaces PowerPoint, Adobe, video tools, and social design in one platform</li>
-        <li><strong>Faster content</strong> &#8212; teams create professional content in minutes, not days. No designer required</li>
-        <li><strong>SOC 2 / GDPR compliant</strong> &#8212; enterprise-grade security already built in</li>
-        <li><strong>Procurement simplicity</strong> &#8212; one invoice through SHI, not scattered individual credit card charges</li>
+        <li><strong>Brand Governance</strong> &#8212; Lock down templates, fonts, logos globally. Prevent off-brand content before it&#8217;s published.</li>
+        <li><strong>Operational Efficiency</strong> &#8212; Any team creates professional content without bottlenecks. Replaces PowerPoint, Adobe, video tools, docs &#8212; one platform.</li>
+        <li><strong>Security &amp; Compliance</strong> &#8212; SSO, SCIM, ISO 27001, audit logs, Canva Shield AI indemnity.</li>
+        <li><strong>Scalable Collaboration</strong> &#8212; Distribute and manage branded content org-wide. Multi-team, multi-region.</li>
     </ul>
+    <div class="tip">&#128200; Forrester independently validated Canva Enterprise: <span class="stat">414% ROI</span> <span class="stat">payback &lt; 6 months</span>. Use this if they ask for proof of value.</div>
 </div>
 
 <div class="card">
     <h2>&#128683; Handling Objections</h2>
-
     <div class="objection">
         <div class="q">&#8220;The team is happy with the free version.&#8221;</div>
-        <div class="a">&#8220;That&#8217;s a good sign &#8212; it means they&#8217;re getting value. The paid tier is where the real productivity gains are: brand kits, premium content, video editing, and admin controls so IT has visibility. Most teams that upgrade say they wish they&#8217;d done it sooner.&#8221;</div>
+        <div class="a">&#8220;That&#8217;s a good sign &#8212; it means they&#8217;re getting value. The free tier is built for individuals though. What you&#8217;re missing is the layer that makes it work for a team: brand controls, admin visibility, premium content, and proper invoicing. Most teams that upgrade say they wish they&#8217;d done it earlier.&#8221;</div>
     </div>
-
     <div class="objection">
         <div class="q">&#8220;We weren&#8217;t planning to expand this.&#8221;</div>
-        <div class="a">&#8220;Totally understand. The main reason I&#8217;m calling now is timing &#8212; a price increase is already live on Canva&#8217;s website, so locking in before it takes effect makes sense. Even a quick discovery call with Canva&#8217;s team could be worth it.&#8221;</div>
+        <div class="a">&#8220;Totally fair. I&#8217;m not asking you to expand it &#8212; I&#8217;m asking you to formalise what&#8217;s already happening. The usage is there. The question is whether it&#8217;s sitting on personal cards or running through SHI properly. The latter is a 30-minute conversation.&#8221;</div>
     </div>
-
     <div class="objection">
-        <div class="q">&#8220;Who decides on software spend here?&#8221;</div>
-        <div class="a">&#8220;Great question &#8212; is that IT, procurement, or a department head? I&#8217;d love to make sure the right person has the info. If it helps, I can send a one-pager to pass along.&#8221;</div>
+        <div class="q">&#8220;We already use Adobe for design.&#8221;</div>
+        <div class="a">&#8220;Adobe&#8217;s great for creative professionals. Canva fills a different gap &#8212; it empowers everyone else on the team who needs to create content but isn&#8217;t a designer. Most companies use both. The question is: how are your non-designers creating content today?&#8221;</div>
     </div>
-
     <div class="objection">
         <div class="q">&#8220;What&#8217;s the minimum commitment?&#8221;</div>
-        <div class="a">&#8220;For Enterprise, the minimum is typically 30 seats on an annual agreement through SHI. If you want something quicker and smaller, Canva Business starts at 25 seats and is currently under $5,000 total &#8212; which most teams can put on a card same day.&#8221;</div>
+        <div class="a">&#8220;For Canva Business, it&#8217;s 25 seats on an annual basis &#8212; under $5k total, credit card, done same day. For Enterprise, minimum is typically 30 seats on an annual agreement through SHI. Happy to get Canva&#8217;s team to scope out exactly what that looks like for your org.&#8221;</div>
     </div>
 </div>
 
 <div class="card">
     <h2>&#128203; Closing</h2>
     <div class="script-box">
-        <span class="label">Ask for the next step</span>
-        &#8220;Does it make sense to get a 20-minute call in the diary with Canva&#8217;s team? They can put together a proposal based on your current usage and walk through what a formal agreement looks like. What&#8217;s the best email to send the calendar invite to?&#8221;
+        <span class="label">Business close</span>
+        &#8220;The simplest next step is a 20-minute call with Canva&#8217;s team &#8212; they can scope the Business agreement based on your current usage and have something to you within days. What&#8217;s the best email to send the calendar invite?&#8221;
     </div>
-    <div class="script-box">
-        <span class="label">If not right now</span>
-        &#8220;No problem. I&#8217;ll send you a quick note with the key info &#8212; including the pricing before the increase &#8212; so you have it when the time&#8217;s right. Thanks, <span class="fill">[Name]</span>!&#8221;
+    <div class="script-box script-ent">
+        <span class="label">Enterprise close</span>
+        &#8220;Based on what you&#8217;ve described, I think you&#8217;re actually an Enterprise conversation. Canva&#8217;s team can put together a proposal based on your team size, usage, and requirements &#8212; usually within a week. Worth a 20-minute scoping call?&#8221;
     </div>
 </div>
 
