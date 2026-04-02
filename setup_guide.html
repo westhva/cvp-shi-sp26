@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHI x Canva Blitz &#8212; Activity Log Setup Guide</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:#f4f6f8; padding:24px 16px; color:#222; }
+.container { max-width:760px; margin:0 auto; }
+.header { background:linear-gradient(135deg,#00c6ff 0%,#0072ff 100%); color:white; border-radius:16px; padding:28px 32px; margin-bottom:20px; }
+.header h1 { font-size:1.45em; font-weight:800; margin-bottom:4px; }
+.header p { opacity:0.9; font-size:0.95em; }
+.overview { background:white; border-radius:14px; padding:22px 28px; margin-bottom:16px; box-shadow:0 3px 12px rgba(0,0,0,0.07); }
+.overview p { font-size:0.92em; line-height:1.7; color:#444; margin-bottom:8px; }
+.step { background:white; border-radius:14px; padding:22px 28px; margin-bottom:16px; box-shadow:0 3px 12px rgba(0,0,0,0.07); border-left:5px solid #0072ff; }
+.step h2 { font-size:1.05em; font-weight:800; margin-bottom:14px; display:flex; align-items:center; gap:10px; }
+.step-num { background:#0072ff; color:white; border-radius:50%; width:26px; height:26px; display:inline-flex; align-items:center; justify-content:center; font-size:0.85em; font-weight:800; flex-shrink:0; }
+.step p, .step li { font-size:0.9em; line-height:1.7; color:#444; }
+.step ul, .step ol { padding-left:20px; margin-bottom:8px; }
+.step li { margin-bottom:5px; }
+.code { background:#1e293b; color:#7dd3fc; border-radius:8px; padding:12px 16px; font-family:'SF Mono','Fira Code',monospace; font-size:0.82em; margin:10px 0; overflow-x:auto; white-space:pre; }
+.highlight { background:#fef9c3; border:1px solid #fde68a; border-radius:6px; padding:3px 7px; font-weight:600; font-size:0.88em; color:#92400e; }
+.note { background:#eff6ff; border-left:4px solid #3b82f6; border-radius:0 8px 8px 0; padding:10px 14px; font-size:0.85em; color:#1e40af; margin-top:10px; line-height:1.6; }
+.warn { background:#fff7ed; border-left:4px solid #f97316; border-radius:0 8px 8px 0; padding:10px 14px; font-size:0.85em; color:#9a3412; margin-top:10px; line-height:1.6; }
+.form-fields { border-collapse:collapse; width:100%; margin:12px 0; font-size:0.88em; }
+.form-fields th { background:#f1f5f9; padding:8px 12px; text-align:left; font-size:0.8em; text-transform:uppercase; letter-spacing:0.5px; color:#555; }
+.form-fields td { padding:9px 12px; border-bottom:1px solid #f0f0f0; vertical-align:top; color:#333; }
+.form-fields tr:last-child td { border-bottom:none; }
+.tag { display:inline-block; padding:2px 8px; border-radius:10px; font-size:0.75em; font-weight:700; }
+.tag-req { background:#fee2e2; color:#991b1b; }
+.tag-opt { background:#f0fdf4; color:#166534; }
+.done { color:#16a34a; font-weight:700; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+    <h1>&#9881;&#65039; Activity Log Setup Guide</h1>
+    <p>SHI &#215; Canva SMB Q2 2026 Blitz &nbsp;&#183;&nbsp; One-time setup &#8212; takes about 15 minutes</p>
+</div>
+
+<div class="overview">
+    <p><strong>What you&#8217;re setting up:</strong> A Google Form that reps use to log their activity. When they submit, a Google Apps Script automatically parses the accounts, enforces the 5-call/5-email cap, calculates points, and updates the leaderboard. You only need to do this once.</p>
+    <p>After setup, the rep workflow is: click Called/Emailed buttons in dashboard &#8594; click &#8220;Log Activity&#8221; &#8594; review pre-filled form &#8594; submit. Done.</p>
+</div>
+
+<!-- STEP 1 -->
+<div class="step">
+    <h2><span class="step-num">1</span> Create the Google Sheet</h2>
+    <ol>
+        <li>Go to <strong>sheets.google.com</strong> and create a new spreadsheet</li>
+        <li>Name it something like <highlight class="highlight">SHI Blitz Activity Log</highlight></li>
+        <li>You&#8217;ll set up the tabs in Step 4 &#8212; the Apps Script does that automatically</li>
+    </ol>
+</div>
+
+<!-- STEP 2 -->
+<div class="step">
+    <h2><span class="step-num">2</span> Create the Google Form</h2>
+    <ol>
+        <li>Go to <strong>forms.google.com</strong> &#8594; click <strong>+ Blank</strong></li>
+        <li>Name it: <span class="highlight">Canva x SHI &#8212; Activity Log</span></li>
+        <li>Add a description: <em>&#8220;Fill this in at the end of each outreach session. The accounts you&#8217;ve called and emailed will be pre-filled &#8212; just review, add any notes, and submit.&#8221;</em></li>
+    </ol>
+
+    <p style="margin-top:14px;font-weight:700;font-size:0.9em;color:#555;">Add these fields in this exact order:</p>
+    <table class="form-fields">
+        <tr><th>#</th><th>Question Text</th><th>Type</th><th>Required?</th></tr>
+        <tr><td>1</td><td><strong>Rep Name</strong></td><td>Short answer</td><td><span class="tag tag-req">Required</span></td></tr>
+        <tr><td>2</td><td><strong>Date Range</strong> <br><em style="color:#888;font-size:0.9em;">(e.g. &#8220;Apr 1&#8221; or &#8220;Apr 1&#8211;4&#8221;)</em></td><td>Short answer</td><td><span class="tag tag-opt">Optional</span></td></tr>
+        <tr><td>3</td><td><strong>Accounts Called</strong><br><em style="color:#888;font-size:0.9em;">(pre-filled by dashboard)</em></td><td>Paragraph (long text)</td><td><span class="tag tag-opt">Optional</span></td></tr>
+        <tr><td>4</td><td><strong>Accounts Emailed</strong><br><em style="color:#888;font-size:0.9em;">(pre-filled by dashboard)</em></td><td>Paragraph (long text)</td><td><span class="tag tag-opt">Optional</span></td></tr>
+        <tr><td>5</td><td><strong>Anything else to add?</strong><br><em style="color:#888;font-size:0.9em;">Meetings, deals, corrections, notes</em></td><td>Paragraph (long text)</td><td><span class="tag tag-opt">Optional</span></td></tr>
+    </table>
+    <div class="note">&#128203; <strong>For meetings/deals</strong>, tell reps to write it like: <em>&#8220;Meeting: Acme Corp, Deal Reg: Globex, Deal Booked: Initech&#8221;</em> &#8212; the script will parse these automatically.</div>
+</div>
+
+<!-- STEP 3 -->
+<div class="step">
+    <h2><span class="step-num">3</span> Link the Form to your Google Sheet</h2>
+    <ol>
+        <li>In the Form editor, click <strong>Responses</strong> tab at the top</li>
+        <li>Click the Google Sheets icon (&#8220;Link to Sheets&#8221;)</li>
+        <li>Select <strong>&#8220;Select existing spreadsheet&#8221;</strong> and choose the sheet you made in Step 1</li>
+        <li>Click <strong>Create</strong> &#8212; form responses will now flow into a &#8220;Form Responses&#8221; tab in your sheet</li>
+        <li>Rename that tab to exactly: <span class="highlight">Submissions</span></li>
+    </ol>
+</div>
+
+<!-- STEP 4 -->
+<div class="step">
+    <h2><span class="step-num">4</span> Install the Apps Script</h2>
+    <ol>
+        <li>In your Google Sheet, go to <strong>Extensions &#8594; Apps Script</strong></li>
+        <li>Delete any existing code in the editor</li>
+        <li>Open the file <span class="highlight">activity_log_apps_script.gs</span> (in the same folder as this guide), copy the entire contents, and paste it into the Apps Script editor</li>
+        <li>Click <strong>Save</strong> (&#128190; icon or Ctrl+S)</li>
+        <li>In the function dropdown at the top, select <strong>setup</strong></li>
+        <li>Click <strong>Run</strong> &#8594; follow the permissions prompt &#8594; click <strong>Allow</strong></li>
+        <li>You should see a popup: <em>&#8220;Setup complete! Sheets created and form trigger installed.&#8221;</em></li>
+    </ol>
+    <div class="warn">&#9888;&#65039; Google will ask you to authorise the script to access your Sheet. This is normal &#8212; click <strong>Advanced</strong> then <strong>Go to [project name] (unsafe)</strong> if prompted. It&#8217;s your own script in your own account.</div>
+</div>
+
+<!-- STEP 5 -->
+<div class="step">
+    <h2><span class="step-num">5</span> Get the Form pre-fill entry IDs</h2>
+    <p style="margin-bottom:12px;">The dashboard needs the Form&#8217;s field IDs to pre-fill them. Here&#8217;s how to find them:</p>
+    <ol>
+        <li>In your Form editor, click the <strong>eye icon</strong> (&#8220;Preview&#8221;) to open a preview of the form</li>
+        <li>In the preview, right-click the page and choose <strong>Inspect</strong> (or press F12)</li>
+        <li>Use Ctrl+F to search for <code style="background:#f1f5f9;padding:2px 5px;border-radius:4px;">entry.</code></li>
+        <li>You&#8217;ll see entries like <code style="background:#f1f5f9;padding:2px 5px;border-radius:4px;">entry.123456789</code> &#8212; one per field, in order</li>
+        <li>Note down the entry ID for each field: Rep Name, Date Range, Accounts Called, Accounts Emailed</li>
+    </ol>
+    <div class="note">&#128161; <strong>Faster method:</strong> In your Form editor, click the 3-dot menu &#8594; <strong>Get pre-filled link</strong>. Type a test value in each field, click &#8220;Get link&#8221;, and the URL will show all entry IDs.</div>
+</div>
+
+<!-- STEP 6 -->
+<div class="step">
+    <h2><span class="step-num">6</span> Get the Form&#8217;s submission URL</h2>
+    <ol>
+        <li>In the Form editor, click <strong>Send</strong> (top right)</li>
+        <li>Click the <strong>link icon</strong></li>
+        <li>Copy the URL &#8212; it looks like: <code style="background:#f1f5f9;padding:2px 5px;border-radius:4px;">https://docs.google.com/forms/d/e/XXXX/viewform</code></li>
+    </ol>
+</div>
+
+<!-- STEP 7 -->
+<div class="step">
+    <h2><span class="step-num">7</span> Update index.html with the Form URL and entry IDs</h2>
+    <p style="margin-bottom:12px;">Open <span class="highlight">index.html</span> in a text editor and find these lines near the top of the <code style="background:#f1f5f9;padding:2px 5px;border-radius:4px;">&lt;script&gt;</code> section:</p>
+    <div class="code">const FORM_BASE_URL = 'PLACEHOLDER_FORM_URL';
+const ENTRY_REP     = 'entry.PLACEHOLDER_REP';
+const ENTRY_CALLED  = 'entry.PLACEHOLDER_CALLED';
+const ENTRY_EMAILED = 'entry.PLACEHOLDER_EMAILED';</div>
+    <p style="margin-bottom:8px;">Replace each placeholder with the real values you found in Steps 5 and 6:</p>
+    <div class="code">const FORM_BASE_URL = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform';
+const ENTRY_REP     = 'entry.1234567890';   // Rep Name field ID
+const ENTRY_CALLED  = 'entry.2345678901';   // Accounts Called field ID
+const ENTRY_EMAILED = 'entry.3456789012';   // Accounts Emailed field ID</div>
+    <p>Save the file, then <strong>re-upload index.html to GitHub</strong>.</p>
+</div>
+
+<!-- STEP 8 -->
+<div class="step">
+    <h2><span class="step-num">8</span> Connect the Leaderboard</h2>
+    <ol>
+        <li>In your Google Sheet, go to the <strong>Leaderboard</strong> tab</li>
+        <li>Go to <strong>File &#8594; Share &#8594; Publish to web</strong></li>
+        <li>Select <strong>Leaderboard</strong> sheet &#8594; <strong>Comma-separated values (.csv)</strong> &#8594; <strong>Publish</strong></li>
+        <li>Copy the published CSV URL</li>
+        <li>Open <span class="highlight">leaderboard.html</span>, find the <code style="background:#f1f5f9;padding:2px 5px;border-radius:4px;">SHEET_URL</code> constant, and replace the PLACEHOLDER with this URL</li>
+        <li>Re-upload <span class="highlight">leaderboard.html</span> to GitHub</li>
+    </ol>
+</div>
+
+<!-- DONE -->
+<div class="step" style="border-left-color:#16a34a;">
+    <h2><span class="step-num" style="background:#16a34a;">&#10003;</span> You&#8217;re done!</h2>
+    <p style="margin-bottom:10px;">After setup, the flow is fully automated:</p>
+    <ol>
+        <li>Rep clicks <strong>Called</strong> / <strong>Emailed</strong> buttons in dashboard as they go</li>
+        <li>End of session &#8594; clicks <strong>Log Activity</strong> &#8594; pre-filled form opens</li>
+        <li>Rep reviews, adds any meeting/deal notes, clicks <strong>Submit</strong></li>
+        <li>Apps Script parses the submission, enforces caps, calculates points, updates leaderboard</li>
+        <li>Leaderboard auto-refreshes next time anyone loads it</li>
+    </ol>
+    <div class="note">&#127918; <strong>To manually trigger a recalculation</strong> at any time (e.g. after editing a submission): open Apps Script &#8594; select <code style="background:#f1f5f9;padding:2px 5px;border-radius:4px;">recalcAll</code> &#8594; Run.</div>
+</div>
+
+</div>
+</body>
+</html>
